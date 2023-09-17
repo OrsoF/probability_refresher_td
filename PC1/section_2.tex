@@ -1,41 +1,25 @@
 \begin{center}
-  \section*{Independence and conditioning}
+    \section*{Independence}
 \end{center}
 
 \begin{Exercise}
-  Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}, B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$. Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
+     Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}, B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$. Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
 \end{Exercise}
 
 \begin{Exercise}
-  Consider a family with two kids and the four equiprobable configurations $\left(\omega_{1}, \omega_{2}\right)$ with $\omega_{i}=$ sex of $i$ th child.
+Let $A_1, \cdots , A_n$ be $n$ events from a probability space $(\Omega, \mathbb{P})$.
+Suppose that they are mutually independent. Find an explicit expression for $\mathbb{P}(A_1 \cup \cdots \cup A_n)$ depending on the $\mathbb{P}(A_i)$.
+\end{Exercise}
 
+\begin{Exercise}
+  Let $(\Omega, \mathcal{F}, \mathbb{P})$ a probability space. Let $\left(A_n\right)_{n \geq 0}$ a series of independent events. We note $A=\lim \sup _n A_n$. Let assume that $\sum_n \mathbb{P}\left(A_n\right)=+\infty$ and we want to prove that $\mathbb{P}(A)=1$.
   \begin{enumerate}
-    \item What is the probability that both kids are girls, given that the younger one is a girl?
-
-    \item What is the probability that both kids are girls, given that the older one is a girl?
-
-    \item What is the probability that both kids are girls, given that the one of the two kids is a girl?
-
+    \item Preliminary. Justify that for all $x>-1, \ln (1+x) \leq x$.
+    \item Let $n \leq N$. We note $E_{n, N}=\bigcap_{k=n}^N \overline{A_k}$ and $E_n=\bigcap_{k \geq n} \overline{A_k}$.
+    \begin{itemize}
+      \item Prove that ( $n$ fixed), $\lim _{N \rightarrow+\infty} \ln \left(\mathbb{P}\left(E_{n, N}\right)\right)=-\infty$.
+      \item Deduce that $\mathbb{P}\left(E_n\right)=0$.
+      \item Deduce that $\mathbb{P}(A)=1$.
+    \end{itemize}
   \end{enumerate}
 \end{Exercise}
-
-\begin{Exercise}
-
-
-  Let $\left(C_{i}\right)_{1 \leq i \leq n}$ be a partition of $\Omega$, that is, $\left(C_{i}\right)_{1 \leq i \leq n}$ is a family of pairwise disjoint sets and $\bigcup_{1 \leq i \leq n} C_{i}=\Omega$. Let $A$ and $B$ be two events of $\Omega$. Suppose that
-
-  \begin{itemize}
-    \item $A$ and $B$ are conditionally independent given any set $C_{i}$, that is,
-  \end{itemize}
-
-  $$
-    \mathbb{P}\left(A \cap B \mid C_{i}\right)=\mathbb{P}\left(A \mid C_{i}\right) \mathbb{P}\left(B \mid C_{i}\right), \quad \text { for } i=1, \ldots, n .
-  $$
-
-  \begin{itemize}
-    \item $B$ is independent of $C_{i}$ for any $1 \leq i \leq n$.
-  \end{itemize}
-
-  Show that $A$ and $B$ are independent.
-\end{Exercise}
-
