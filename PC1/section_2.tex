@@ -1,36 +1,65 @@
 \begin{center}
-    \section*{Independence}
+  \section*{Independence}
 \end{center}
 
 \begin{Exercise}[origin=Independent events]
-     Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}$, $B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$. 
-     Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
+  Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}$, $B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$.
+  Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
 \end{Exercise}
 
 \vspace{0.5cm}
 
 \begin{solution}
-On a $\proba(\{w_i\})=1/|\Omega|=1/4$ pour $i=1,\dots,4$.
-D'une part,   $\proba(A)=\proba(\{\omega_1\})+\proba(\{\omega_2\})=1/2$. De même, $\proba(B)=\proba(C)=1/2$. D'autre part, $A\cap B=\{\omega_1\}$ et donc $\proba(A\cap B)=1/4$. Donc, on a montr\'e que 
-$\proba(A\cap B)=\proba(A)\proba(B)$, d'où l'ind\'ependance de $A$ et $B$. De même, on montre que $A$ et $C$ sont ind\'ependants et $B$ et $C$ sont ind\'ependants.
+  On a $\proba(\{w_i\})=1/|\Omega|=1/4$ pour $i=1,\dots,4$.
+  D'une part, $\proba(A)=\proba(\{\omega_1\})+\proba(\{\omega_2\})=1/2$. De même, $\proba(B)=\proba(C)=1/2$. D'autre part, $A\cap B=\{\omega_1\}$ et donc $\proba(A\cap B)=1/4$. Donc, on a montr\'e que
+  $\proba(A\cap B)=\proba(A)\proba(B)$, d'où l'ind\'ependance de $A$ et $B$. De même, on montre que $A$ et $C$ sont ind\'ependants et $B$ et $C$ sont ind\'ependants.
 
-Comme $A \cap B \cap C=\emptyset$, on a  $\proba(A \cap B \cap C)=0$. En revanche, $\proba(A) \proba(B) \proba(C)=1/8$. Cela implique que $A, B$ et $C$ ne sont pas mutuellement ind\'ependants.
+  Comme $A \cap B \cap C=\emptyset$, on a  $\proba(A \cap B \cap C)=0$. En revanche, $\proba(A) \proba(B) \proba(C)=1/8$. Cela implique que $A$, $B$ et $C$ ne sont pas mutuellement ind\'ependants.
 \end{solution}
 
 \begin{Exercise}
-Let $A_1, \cdots , A_n$ be $n$ events from a probability space $(\Omega, \mathbb{P})$.
-Suppose that they are mutually independent. Find an explicit expression for $\mathbb{P}(A_1 \cup \cdots \cup A_n)$ depending on the $\mathbb{P}(A_i)$.
+  Let $A_1, \ldots , A_n$ be $n$ events from a probability space $(\Omega, \mathbb{P})$.
+  Suppose that they are mutually independent. Find an explicit expression for $\mathbb{P}(A_1 \cup \cdots \cup A_n)$ depending on the $\mathbb{P}(A_i)$.
 \end{Exercise}
 
 \begin{Exercise}
   Let $(\Omega, \mathcal{F}, \mathbb{P})$ a probability space. Let $\left(A_n\right)_{n \geq 0}$ a series of independent events. We note $A=\lim \sup _n A_n$. Let assume that $\sum_n \mathbb{P}\left(A_n\right)=+\infty$ and we want to prove that $\mathbb{P}(A)=1$.
   \begin{enumerate}
     \item Preliminary. Justify that for all $x>-1, \ln (1+x) \leq x$.
-    \item Let $n \leq N$. We note $E_{n, N}=\bigcap_{k=n}^N \overline{A_k}$ and $E_n=\bigcap_{k \geq n} \overline{A_k}$.
-    \begin{enumerate}
-      \item Prove that ( $n$ fixed), $\lim _{N \rightarrow+\infty} \ln \left(\mathbb{P}\left(E_{n, N}\right)\right)=-\infty$.
-      \item Deduce that $\mathbb{P}\left(E_n\right)=0$.
-      \item Deduce that $\mathbb{P}(A)=1$.
-    \end{enumerate}
+    \item Let $n \leq N$. We note $E_{n, N}=\bigcap_{k=n}^N A_k^c$ and $E_n=\bigcap_{k \geq n} A_k^c$.
+          \begin{enumerate}
+            \item Prove that ($n$ fixed), $\lim _{N \rightarrow+\infty} \ln \left(\mathbb{P}\left(E_{n, N}\right)\right)=-\infty$.
+            \item Deduce that $\mathbb{P}\left(E_n\right)=0$.
+            \item Deduce that $\mathbb{P}(A)=1$.
+          \end{enumerate}
   \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item La fonction ln est concave. Sa courbe représentative est en-dessous de sa tangente au point d'abscisse 1. L'inégalité demandée est juste la traduction analytique de cette propriété géométrique.
+    \item \begin{enumerate}
+            \item Les événements $A_k$ étant indépendants, il en est de même des événements $\overline{A_k}$, et donc
+                  $$
+                    P\left(E_{n, N}\right)=\prod_{k=n}^N P\left(\overline{A_k}\right)=\prod_{k=n}^N\left(1-P\left(A_k\right)\right) .
+                  $$
+                  En utilisant l'inégalité précédente, on a
+                  $$
+                    \ln \left(P\left(E_{n, N}\right)\right) \leq-\sum_{k=n}^N P\left(A_k\right) .
+                  $$
+                  Puisque $\sum_{k \geq n} P\left(A_k\right)=+\infty$, on en déduit le résultat.
+            \item Par composition par la fonction exponentielle, $\left(P\left(E_{n, N}\right)\right)$ tend vers 0 lorsque $N$ tend vers l'infini (et $n$ reste fixé). Mais, la suite $\left(E_{n, N}\right)_N$ est décroissante et
+                  $$
+                    E_n=\bigcap_{N \geq n} E_{n, N}
+                  $$
+                  Ainsi,
+                  $$
+                    P\left(E_n\right)=\lim _N P\left(E_{n, N}\right)=0 .
+                  $$
+            \item $A$ s'écrit $A=\bigcap_n \overline{E_n}$. La suite $\left(\overline{E_n}\right)$ est décroissante et $P\left(\overline{E_n}\right)=1$. Ainsi, on trouve que
+                  $$
+                    P(A)=\lim _n P\left(\overline{E_n}\right)=1 .
+                  $$
+          \end{enumerate}
+  \end{enumerate}
+\end{solution}

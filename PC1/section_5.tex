@@ -1,32 +1,32 @@
 \begin{center}
-    \section*{Variance Inequalities}
+  \section*{Variance Inequalities}
 \end{center}
 
 \begin{Exercise}
-    Let $X$ be a random variable such that $\mathbb{E}\left[X^2\right]<+\infty$. Prove that :
-    \begin{enumerate}
-        \item $0 \leq \operatorname{Var}(X)<\infty$
-        \item $\operatorname{Var}(X)=\mathbb{E}\left[X^2\right]-(\mathbb{E}[X])^2$.
-        \item $\operatorname{Var}(X)=0 \Longleftrightarrow \mathbb{P}(X=c)=1$ for some constant $c$.
-        \item For any constants $a, b, \operatorname{Var}(a X+b)=\operatorname{Var}(a X)=a^2 \operatorname{Var}(X)$.
-    \end{enumerate}
+  Let $X$ be a random variable such that $\mathbb{E}\left[X^2\right]<+\infty$. Prove that :
+  \begin{enumerate}
+    \item $0 \leq \operatorname{Var}(X)<\infty$
+    \item $\operatorname{Var}(X)=\mathbb{E}\left[X^2\right]-(\mathbb{E}[X])^2$.
+    \item $\operatorname{Var}(X)=0 \Longleftrightarrow \mathbb{P}(X=c)=1$ for some constant $c$.
+    \item For any constants $a, b, \operatorname{Var}(a X+b)=\operatorname{Var}(a X)=a^2 \operatorname{Var}(X)$.
+  \end{enumerate}
 \end{Exercise}
 
 \begin{Exercise}
-    Let $X$ be non-negative ($X \geq 0$ a.s.) and $a>0$ be a constant.
-    \begin{enumerate}
-        \item Justify that
-              $$\forall \omega \in \Omega, \quad a \mathbf{1}_{\{Z(\omega) \geqslant a\}} \leqslant Z(\omega) \mathbf{1}_{\{Z(\omega) \geqslant a\}} \leqslant Z(\omega)$$
-        \item Prove the Markov's inequality
-              $$
-                  \mathbb{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a}
-              $$
-    \end{enumerate}
+  Let $X$ be non-negative ($X \geq 0$ a.s.) and $a>0$ be a constant.
+  \begin{enumerate}
+    \item Justify that
+          $$\forall \omega \in \Omega, \quad a \mathbf{1}_{\{X(\omega) \geqslant a\}} \leqslant X(\omega) \mathbf{1}_{\{X(\omega) \geqslant a\}} \leqslant X(\omega)$$
+    \item Prove the Markov's inequality
+          $$
+            \mathbb{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a}
+          $$
+  \end{enumerate}
 \end{Exercise}
 
 \begin{Exercise}
-    Assume that $\mathbb{E}\left[X^2\right]<+\infty$. Applying Markov's inequality to $(X-\mathbb{E}[X])^2$ prove that, for any constant $a>0$,
-    $$
-        \mathbb{P}(|X-\mathbb{E}[X]| \geq a) \leq \frac{\operatorname{Var}(X)}{a^2}
-    $$
+  Assume that $\mathbb{E}\left[X^2\right]<+\infty$. Applying Markov's inequality to $(X-\mathbb{E}[X])^2$ prove that, for any constant $a>0$,
+  $$
+    \mathbb{P}(|X-\mathbb{E}[X]| \geq a) \leq \frac{\operatorname{Var}(X)}{a^2}
+  $$
 \end{Exercise}
