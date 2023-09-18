@@ -29,6 +29,21 @@
 \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  \begin{enumerate}
+      \item Par int\'{e}gration par parties :
+      \[
+        \mathbb{E}\left(X^{n}\right) = \int_{0}^{+\infty}x^{n}\lambda e^{-\lambda x}dx = \int_{0}^{+\infty}x^{n-1} e^{-\lambda x}dx = \frac{n}{\lambda}\mathbb{E}\left(X^{n-1}\right).
+      \]
+      On en d\'{e}duit le r\'{e}sultat par r\'{e}curence imm\'{e}diate.
+      \item Par int\'{e}gration par parties :
+      \[
+        \mathbb{E}\left(X^{2n}\right) = \int_{\mathbb{R}}x^{2n}\frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}}dx = \int_{\mathbb{R}}\frac{x^{2n+2}}{2n + 1}\frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}}dx = \frac{1}{2n+1}\mathbb{E}\left(X^{2(n+1)}\right).
+      \]
+      On en d\'{e}duit le r\'{e}sultat par r\'{e}curence imm\'{e}diate.
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise}
     ${ }^{*}$ Let $X: \Omega \rightarrow[0 ;+\infty]$ (note that $+\infty$ is allowed) be a random variable such that $\mathbb{E}[X]<\infty$.
 

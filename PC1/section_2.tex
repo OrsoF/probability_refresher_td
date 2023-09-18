@@ -2,9 +2,20 @@
     \section*{Independence}
 \end{center}
 
-\begin{Exercise}
-     Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}, B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$. Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
+\begin{Exercise}[origin=Independent events]
+     Let $\Omega=\left\{\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}\right\}$ equipped with the uniform probability distribution $\mathbb{P}$. Define the events $A=\left\{\omega_{1}, \omega_{2}\right\}$, $B=\left\{\omega_{1}, \omega_{3}\right\}$ and $C=\left\{\omega_{2}, \omega_{3}\right\}$. 
+     Show that $A, B$ and $C$ are pairwise independent. Compare $\mathbb{P}(A \cap B \cap C)$ and $\mathbb{P}(A) \mathbb{P}(B) \mathbb{P}(C)$.
 \end{Exercise}
+
+\vspace{0.5cm}
+
+\begin{solution}
+On a $\proba(\{w_i\})=1/|\Omega|=1/4$ pour $i=1,\dots,4$.
+D'une part,   $\proba(A)=\proba(\{\omega_1\})+\proba(\{\omega_2\})=1/2$. De même, $\proba(B)=\proba(C)=1/2$. D'autre part, $A\cap B=\{\omega_1\}$ et donc $\proba(A\cap B)=1/4$. Donc, on a montr\'e que 
+$\proba(A\cap B)=\proba(A)\proba(B)$, d'où l'ind\'ependance de $A$ et $B$. De même, on montre que $A$ et $C$ sont ind\'ependants et $B$ et $C$ sont ind\'ependants.
+
+Comme $A \cap B \cap C=\emptyset$, on a  $\proba(A \cap B \cap C)=0$. En revanche, $\proba(A) \proba(B) \proba(C)=1/8$. Cela implique que $A, B$ et $C$ ne sont pas mutuellement ind\'ependants.
+\end{solution}
 
 \begin{Exercise}
 Let $A_1, \cdots , A_n$ be $n$ events from a probability space $(\Omega, \mathbb{P})$.

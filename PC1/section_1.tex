@@ -4,19 +4,15 @@
 
 \begin{Exercise}
 For $n \geq 1$, let
-
 $$
 A_{n}=\left[-\frac{1}{n} ; 2+\frac{1}{n}\right], \quad B_{n}=\left[-\frac{5}{n} ; n^{2}\right] .
 $$
-
 \begin{enumerate}
   \item Compute $\bigcup_{n \geq 1} A_{n}, \bigcap_{n \geq 1} A_{n}$ and $\lim \sup _{n} A_{n}$, where $\lim \sup _{n} A_{n}$ is defined as
 \end{enumerate}
-
 $$
 \limsup A_{n}=\bigcap_{n \geq 1} \bigcup_{k \geq n} A_{k}=\left\{x \text { such that " } x \in A_{n} \text { for infinitely many } n \text { " }\right\} \text {. }
 $$
-
 \begin{enumerate}
   \setcounter{enumi}{1}
   \item Compute $\bigcup_{n \geq 1} B_{n}, \bigcap_{n \geq 1} B_{n}$ and $\lim \sup _{n} B_{n}$.
@@ -24,8 +20,18 @@ $$
   \item Evaluate the following set
 
 \end{enumerate}
-
 $$
 \left\{x \text { such that } \sum_{n \geq 1} \mathbf{1}_{A_{n}}(x)=+\infty\right\} .
 $$
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+ \item 
+ Rappel de la d\'efinition : $\limsup_{n \rightarrow \infty} A_{n} =\cap_{k\geq 1} \cup_{n\ge k} A_n$.
+ Il s'agit de l'\'ev\'enement o\`u :
+ $$\omega \in \limsup_{n \rightarrow \infty} A_{n}  \ \Longleftrightarrow \  \textrm{il existe une infinit\'e de  $n$ tels que } \omega \in A_{n}.$$
+ 
+ La suite $(A_n)_{n\ge 1}$ \'etant monotone d\'ecroissante ($A_n \supset A_{n+1}$ pour tout $n\ge1$), on a pour tout $k\ge1$, $\cup_{n\ge k} A_n=[-1/k,3+1/k]$. D'une part, on voit que $[0,3]\subset A_k\subset \cup_{n\ge k} A_n$ pour tout $k$. D'autre part, pour tout $s<0$ et pour tout $t>3$ il existe $k$ tel que $s<-1/k$ et $t>3+1/k$. Donc, $\limsup_{n \rightarrow \infty} A_{n}=[0,3]$.
+ \end{enumerate}
+\end{solution}

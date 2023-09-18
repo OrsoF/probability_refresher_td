@@ -1,5 +1,7 @@
 \documentclass{article}
 
+%%% Packages %%%
+
 \usepackage[margin=1in]{geometry}
 \usepackage{exercise}
 \renewcommand{\ExerciseHeader}{%
@@ -9,16 +11,35 @@
 }
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{amsmath, amsfonts, amssymb}
 \usepackage[version=4]{mhchem}
 \usepackage{stmaryrd}
-\usepackage{bbold}
+\usepackage{bbold} 
+
+%%% Commands %%%
+
+\newcommand{\proba}{\mathbb{P}}
+
+%%% Solutions %%%
+
+\newtheorem{solution}{Solution}
+\newif\ifhidesolutions
+% \hidesolutionstrue %decommenter pour cacher les SOLUTIONS
+
+\ifhidesolutions
+\usepackage{environ}
+\NewEnviron{hide}{}
+\let\solution\hide
+\let\endsolution\endhide
+\fi
+
+%%% Title %%%
 
 \title{PC 1 – Sets, Measures and Random Variables}
 \author{}
 \date{}
+
+%%% Document %%%
 
 \begin{document}
 
