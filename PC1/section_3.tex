@@ -6,6 +6,16 @@
   Find two random variables $X$ and $Y$ on a probability space $(\Omega, \mathbb{P})$ (to be specified) having the same distribution, but that are not equal.
 \end{Exercise}
 
+\begin{solution}
+  Let $X$ a random variable on $[1/2, 2]$ with p.d.f. $f : x \to \frac{2}{3x}$ and $Y = 1/X$.
+  \begin{enumerate}
+    \item $X$ and $1/X$ have same p.d.f. (prove it)
+    \item $X$ and $1/X$ are not the same random variable. Indeed :
+          $$\frac{X}{1/X} = X^2$$
+          and $X^2$ is not equal to $1$ almost surely.
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise}
   In an oil region, the probability that one drilling leads to an oil slick is 0.1 .
   \begin{enumerate}
@@ -21,6 +31,24 @@
           \end{enumerate}
   \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Bernoulli is a Success/Failure model with a given probability of succes.
+    \item Using definition of a binomial law :
+          \begin{enumerate}
+            \item \begin{align*}
+                    \proba{X = 2} & = \binom{10}{2} .1^2 \times .9^8 \\
+                                  & \approx 0.194
+                  \end{align*}
+            \item \begin{align*}
+                    \proba{X \geq 1} & = 1 - \proba{X = 0}              \\
+                                     & = 1 - \binom{10}{0} 0.1^0 0.9^10 \\
+                                     & \approx 0.651
+                  \end{align*}
+          \end{enumerate}
+  \end{enumerate}
+\end{solution}
 
 \begin{Exercise}
   Let $\lambda>0$ be fixed. Let $X_{n}, n \geq 1$ be random variables with binomial distribution with parameters $n$ and $\lambda / n$, and $Y$ be a random variable with Poisson distribution with parameter $\lambda$. Show that, for any $k \in \mathbb{N}$,

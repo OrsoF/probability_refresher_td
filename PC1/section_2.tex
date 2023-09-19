@@ -22,6 +22,14 @@
   Suppose that they are mutually independent. Find an explicit expression for $\mathbb{P}(A_1 \cup \cdots \cup A_n)$ depending on the $\mathbb{P}(A_i)$.
 \end{Exercise}
 
+\begin{solution}
+  \begin{align*}
+    \proba{A_1 \cup \cdots \cup A_n} & = 1- \proba{A_1^c \cap \cdots \cap A_n^c}             \\
+                                     & = 1- \prod_{i = 1}^{n} \proba{A_i^c}                  \\
+                                     & = 1- \prod_{i = 1}^{n} \left( 1 - \proba{A_i} \right)
+  \end{align*}
+\end{solution}
+
 \begin{Exercise}
   Let $(\Omega, \mathcal{F}, \mathbb{P})$ a probability space. Let $\left(A_n\right)_{n \geq 0}$ a series of independent events. We note $A=\lim \sup _n A_n$. Let assume that $\sum_n \mathbb{P}\left(A_n\right)=+\infty$ and we want to prove that $\mathbb{P}(A)=1$.
   \begin{enumerate}

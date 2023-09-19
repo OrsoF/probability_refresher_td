@@ -22,6 +22,10 @@
   \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  A lot of simple calculus !
+\end{solution}
+
 \begin{Exercise}
   \begin{enumerate}
     \item Show that if $X$ exponential distribution $\operatorname{Exp}(\lambda)$ with $\lambda>0$, then $\mathbb{E}\left[X^{n}\right]=\frac{n !}{\lambda^{n}}$;
@@ -55,3 +59,14 @@
     \item Assume that $\mathbb{E}[X]=0$. Prove that $X=0$ almost surely. Hint: use that $X \geq \frac{1}{n} \mathbf{1}_{X \geq 1 / n}$.
   \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Let assume that $\proba{X = \infty} > 0$. Then :
+          $$\esperance{X} = \sum_{\omega \in \Omega} X(\omega) \proba{\omega}$$
+          In the sum, there is $\omega \in \omega$ such that $X(\omega) = \infty$ and the sum cannot be finite.
+    \item $X$ is positive and therefore, as a sum of positive terms :
+          $$\esperance{X} = 0 \implies \sum_{\omega \in \Omega} X(\omega) \proba{\omega} = 0 \implies \forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0$$
+          Then "$\forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0$" can be red $\proba{X \geq 0} = 0$.
+  \end{enumerate}
+\end{solution}
