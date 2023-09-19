@@ -33,3 +33,28 @@
 
   We will later see that this result means that $X_{n}$ converges in distribution to $Y$, or, to put it differently, that the binomial distribution with parameters $n$ and $\lambda / n$ converges to the Poisson distribution with parameter $\lambda$.
 \end{Exercise}
+
+\begin{solution}
+  We have :
+  \begin{align*}
+    \proba{X_n = k} & = \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k}        \\
+                    & = \frac{n!}{k!(n-k)!} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \\
+                    & = \frac{\lambda^k}{k!} \frac{n!}{(n-k)! n^k} \left(  1- \frac{\lambda}{n} \right)^{n-k}
+  \end{align*}
+  And :
+  $$ \left(  1- \frac{\lambda}{n} \right)^{n-k} = \left(  1- \frac{\lambda}{n} \right)^{k} \left(  1- \frac{\lambda}{n} \right)^{n} $$
+  with
+  $$ \left(  1- \frac{\lambda}{n} \right)^{k} \limitinftyn 0 $$
+  and
+  \begin{align*}
+    \left(  1- \frac{\lambda}{n} \right)^n & = e^{\log\left(  1- \frac{\lambda}{n} \right)^n}  \\
+                                           & = e^{n.\log\left(  1- \frac{\lambda}{n} \right)}  \\
+                                           & \thicksim e^{n\left( - \frac{\lambda}{n} \right)} \\
+                                           & = e^{-\lambda}
+  \end{align*}
+  Also,
+  $$\frac{n!}{(n-k)!}= n.(n-1).(n-2). \cdot . (n-k+1) \thicksim n^k $$
+  Finally,
+  $$ \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \thicksim \frac{\lambda^k}{k!} 1. e^{-\lambda} $$
+  This conclude the exercise.
+\end{solution}

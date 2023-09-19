@@ -12,6 +12,47 @@
   \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item We will show here :
+          \begin{enumerate}
+            \item $\mathbb{E}[X]$ exists and is finite.
+            \item $\operatorname{Var}(X) \geq 0$
+            \item $\operatorname{Var}(X) < \infty$
+          \end{enumerate}
+          Let begin.
+          \begin{enumerate}
+            \item $\esperance{X^2}$ is finite so $\esperance{(X+1)^2}$ is. So $\esperance{X^2 + 2X + 1}$ is.
+                  As $\esperance{X^2} +1$ is obviously finite, $\esperance{X}$ exists and is finite.
+            \item We have $\var{X} = \esperance{(X-\esperance{X})^2}$ which exists as $\esperance{X}$ is a constant. As $(X-\esperance{X})^2$ is almost surely positive, we have the wanted result.
+            \item We have :
+                  \begin{align*}
+                    \var{X} & = \esperance{(X-\esperance{X})^2}                                     \\
+                            & = \esperance{X^2} + \esperance{- 2.X.\esperance{X}} + \esperance{X}^2 \\
+                            & = \esperance{X^2} - 2.\esperance{X}.\esperance{X} + \esperance{X}^2   \\
+                            & = \esperance{X^2} - \esperance{X}^2
+                  \end{align*}
+                  The two term are finite. Therefore, $\var{X}$ is finite.
+          \end{enumerate}
+    \item Following the previous calculus, the wanted equality is true.
+    \item We have :
+          \begin{align*}
+            \var{X} = 0 & \iff \var{(X-\esperance{X})^2} = 0               \\
+                        & \iff X - \esperance{X} = 0 almost surely         \\
+                        & \iff X = \esperance{X} almost surely             \\
+                        & \iff \exists c \in \mathbb{R}, \proba{X = c} = 1
+          \end{align*}
+
+    \item We have :
+          \begin{align*}
+            \var{aX + b} & = \esperance{(aX+b - \esperance{aX+b})^2}        \\
+                         & = \esperance{(aX - \esperance{ax})^2} = \var{aX} \\
+                         & = a^2 \esperance{(X - \esperance{X})^2}          \\
+                         & = a^2 \var{X}
+          \end{align*}
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise}
   Let $X$ be non-negative ($X \geq 0$ a.s.) and $a>0$ be a constant.
   \begin{enumerate}
@@ -24,9 +65,41 @@
   \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item Let prove that :
+          \begin{enumerate}
+            \item $\forall \omega \in \Omega, \quad a \mathbf{1}_{\{X(\omega) \geqslant a\}} \leqslant X(\omega) \mathbf{1}_{\{X(\omega) \geqslant a\}}$
+            \item $\forall \omega \in \Omega, \quad X(\omega) \mathbf{1}_{\{X(\omega) \geqslant a\}} \leqslant X(\omega)$
+          \end{enumerate}
+          Let us begin.
+          \begin{enumerate}
+            \item Let $\omega \in \Omega$. Consider the two cases $X(\omega) \geq a$ and $X(\omega) < a$ and prove that the wanted inequality is true in the two cases.
+            \item As the indicator function is below or equal to $1$, the inequality is true.
+          \end{enumerate}
+    \item We have from 1. :
+          $$\forall \omega \in \Omega, \quad a \mathbf{1}_{\{X(\omega) \geqslant a\}} \leqslant X(\omega)$$
+          Taking the expected value in this inequality :
+          \begin{align*}
+                 & \esperance{a \mathbf{1}_{\{X(\omega) \geqslant a\}}} \leq \esperance{X} \\
+            \iff & a \esperance{\mathbf{1}_{\{X(\omega) \geqslant a\}}} \leq \esperance{X} \\
+            \iff & a \proba{X \geq a} \leq \esperance{X}                                   \\
+            \iff & \proba{X \geq a} \leq \frac{\esperance{X}}{a}
+          \end{align*}
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise}
   Assume that $\mathbb{E}\left[X^2\right]<+\infty$. Applying Markov's inequality to $(X-\mathbb{E}[X])^2$ prove that, for any constant $a>0$,
   $$
     \mathbb{P}(|X-\mathbb{E}[X]| \geq a) \leq \frac{\operatorname{Var}(X)}{a^2}
   $$
 \end{Exercise}
+
+\begin{solution}
+  Applying markov inequality to $(X-\mathbb{E}[X])^2$ and $a^2 > 0$, we have :
+  \begin{align*}
+         & \proba{(X-\mathbb{E}[X])^2 \geq a^2} \leq \frac{\esperance{(X-\mathbb{E}[X])^2}}{a^2} \\
+    \iff & \proba{|X-\mathbb{E}[X]| \geq a} \leq \frac{\var{X}}{a^2}
+  \end{align*}
+\end{solution}
