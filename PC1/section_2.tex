@@ -10,11 +10,17 @@
 \vspace{0.5cm}
 
 \begin{solution}
-  On a $\proba(\{w_i\})=1/|\Omega|=1/4$ pour $i=1,\dots,4$.
-  D'une part, $\proba(A)=\proba(\{\omega_1\})+\proba(\{\omega_2\})=1/2$. De même, $\proba(B)=\proba(C)=1/2$. D'autre part, $A\cap B=\{\omega_1\}$ et donc $\proba(A\cap B)=1/4$. Donc, on a montr\'e que
-  $\proba(A\cap B)=\proba(A)\proba(B)$, d'où l'ind\'ependance de $A$ et $B$. De même, on montre que $A$ et $C$ sont ind\'ependants et $B$ et $C$ sont ind\'ependants.
+  We have :
+  $$ A \cap B = \{\omega_1, \omega_2\} \cap \{\omega_1, \omega_3\} =  \{\omega_1\}  $$
+  Therefore
+  $$ \proba{A \cap B} = \proba{\omega_1} = \frac{1}{4}$$
+  And
+  $$ \proba{A}. \proba{B} = \frac{1}{2} . \frac{1}{2} = \frac{1}{4} $$
+  Therefore :
+  $$\proba{A \cap B} = \proba{A}.\proba{B}$$
+  And finally $A$ and $B$ are independent. For similar reasons, $B$ and $C$ are independent and so $A$ and $C$.
 
-  Comme $A \cap B \cap C=\emptyset$, on a  $\proba(A \cap B \cap C)=0$. En revanche, $\proba(A) \proba(B) \proba(C)=1/8$. Cela implique que $A$, $B$ et $C$ ne sont pas mutuellement ind\'ependants.
+  As $A \cap B \cap C=\emptyset$, we have  $\proba(A \cap B \cap C) =0$. However, $\proba(A) \proba(B) \proba(C)=1/8$. This implies that $A$, $B$ et $C$ are not mutually independent.
 \end{solution}
 
 \begin{Exercise}
