@@ -23,6 +23,7 @@
 \newcommand{\esperance}[1]{\mathbb{E}[#1]}
 \newcommand{\limitinftyn}{\xrightarrow[n \to \infty]{}}
 \newcommand{\indicator}[1]{\mathbb{1}_{#1}}
+\newcommand{\R}{\mathbb{R}}
 
 %%% Solutions %%%
 
@@ -176,7 +177,13 @@
                                     & = \int_a^b \frac{1}{\sqrt{2\pi}} e^{-\frac{y^2}{2}} dy \text{ with change of variable } y = \frac{x-\mu}{\sigma}
           \end{align*}
           Therefore, $Y$ follows a normal distribution.
-    \item
+    \item Let compute $\esperance{|Y|}$.
+          \begin{align*}
+            \esperance{|Y|} & = \frac{1}{\sqrt{2\pi}} \int_\R |x| e^{\frac{-x^2}{2}}            \\
+                            & = \frac{1}{\sqrt{2\pi}}.2. \int_{\R^+} x e^{\frac{-x^2}{2}}       \\
+                            & = \sqrt{\frac{2}{\pi}} \left[ e^{\frac{-x^2}{2}} \right]_0^\infty \\
+                            & = \sqrt{\frac{2}{\pi}}
+          \end{align*}
   \end{enumerate}
 \end{solution}
 
