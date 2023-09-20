@@ -168,11 +168,15 @@
 
 \begin{solution}
   \begin{enumerate}
-    \item We have :
+    \item If $Y=(X-\mu)/\sigma$, then :
           \begin{align*}
-            \proba{a \leq X \leq b} & = \int_a^b \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx \\
-                                    & = AAAA
+            \proba{a \leq Y \leq b} & = \proba{a \leq \frac{X-\mu}{\sigma} \leq b}                                                                     \\
+                                    & = \proba{a\sigma + \mu \leq X \leq b\sigma + \mu}                                                                \\
+                                    & = \int_{a\sigma + \mu}^{b\sigma + \mu} \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{{(x-\mu)}^2}{2\sigma^2}} dx      \\
+                                    & = \int_a^b \frac{1}{\sqrt{2\pi}} e^{-\frac{y^2}{2}} dy \text{ with change of variable } y = \frac{x-\mu}{\sigma}
           \end{align*}
+          Therefore, $Y$ follows a normal distribution.
+    \item
   \end{enumerate}
 \end{solution}
 
