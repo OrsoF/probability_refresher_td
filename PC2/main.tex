@@ -80,10 +80,12 @@
   \]
 \end{solution}
 
-\begin{Exercise} One says that $X \in(0,+\infty)$ follows the $\log$-normal distribution if $\log (X) \sim \mathcal{N}(0,1)$. What is the density of $X$ ?
+\begin{Exercise}
+  One says that $X \in(0,+\infty)$ follows the $\log$-normal distribution if $\log (X) \sim \mathcal{N}(0,1)$. What is the density of $X$ ?
+\end{Exercise}
 
-\end{Exercise} \begin{Exercise} Consider a random variable $X$ having exponential distribution with parameter 1 . Let $a>0$ be a positive real number.
-
+\begin{Exercise}
+  Consider a random variable $X$ having exponential distribution with parameter 1 . Let $a>0$ be a positive real number.
   \begin{enumerate}
     \item Compute the cumulative distribution function of $Y=\min (X, a)$. Plot the
           function.
@@ -92,13 +94,10 @@
 
     \item Compute $\mathbb{E}[Y]$. Hint: Use $Y=X \mathbb{1}_{X \leq a}+a
             \mathbb{1}_{X>a}$.
-
   \end{enumerate}
-
 \end{Exercise}
 
 \begin{Exercise} Let $V$ be a random variable with uniform distribution on $[0, \pi / 2]$. Define the random variable $W=\sin (V)$.
-
   \begin{enumerate}
     \item Determine the distributions of $W$.
 
@@ -106,11 +105,9 @@
           $[0, \pi]$ ?
 
   \end{enumerate}
-
 \end{Exercise}
 
 \begin{Exercise} (Cauchy distribution). Let $X$ be a random variable with Cauchy distribution whose density is given by $f(x)=\left(\pi\left(1+x^{2}\right)\right)^{-1}$. Determine the distribution of $1 / X$ using a change of variables.
-
 \end{Exercise}
 
 \begin{solution}
@@ -155,24 +152,28 @@
 \end{Exercise}
 
 \begin{Exercise} Let $X$ and $Y$ be two independent random variables such that $X$ (resp. $Y$ ) has geometric distribution with parameter $p$ (resp. $q$ ).
-
   \begin{enumerate}
     \item Compute $\mathbb{P}(X>n)$ for any $n \in \mathbb{N}$.
-
     \item What is the distribution of the random variable $Z=\min (X, Y)$ ?
-
   \end{enumerate}
-
 \end{Exercise}
-\begin{Exercise} Assume that $X \sim \mathcal{N}\left(\mu, \sigma^{2}\right)$.
 
+\begin{Exercise} Assume that $X \sim \mathcal{N}\left(\mu, \sigma^{2}\right)$.
   \begin{enumerate}
     \item Show that $Y=(X-\mu) / \sigma$ has standard normal distribution
           $\mathcal{N}(0,1)$.
-
     \item Compute $\mathbb{E}[|Y|]$ and $\mathbb{E}\left[Y^{2019}\right]$.
   \end{enumerate}
-
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item We have :
+          \begin{align*}
+            \proba{a \leq X \leq b} & = \int_a^b \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx \\
+                                    & = AAAA
+          \end{align*}
+  \end{enumerate}
+\end{solution}
 
 \end{document}
