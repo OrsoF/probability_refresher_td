@@ -82,8 +82,13 @@
 \end{solution}
 
 \begin{Exercise}
-  One says that $X \in(0,+\infty)$ follows the $\log$-normal distribution if $\log (X) \sim \mathcal{N}(0,1)$. What is the density of $X$ ?
+  One says that $X \in (0,+\infty)$ follows the $\log$-normal distribution if $\log (X) \sim \mathcal{N}(0,1)$. What is the density of $X$ ?
 \end{Exercise}
+
+\begin{solution}
+  The density of $\log (X)$ is a log normal distribution :
+  $$f_{\log (X)}(x) = \frac{1}{x\sqrt{2\pi}} \exp{\left( -\frac{(\log(x))^2}{2} \right)}$$
+\end{solution}
 
 \begin{Exercise}
   Consider a random variable $X$ having exponential distribution with parameter 1 . Let $a>0$ be a positive real number.
@@ -97,6 +102,8 @@
             \mathbb{1}_{X>a}$.
   \end{enumerate}
 \end{Exercise}
+
+
 
 \begin{Exercise} Let $V$ be a random variable with uniform distribution on $[0, \pi / 2]$. Define the random variable $W=\sin (V)$.
   \begin{enumerate}
