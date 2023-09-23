@@ -15,6 +15,7 @@
 \usepackage[version=4]{mhchem}
 \usepackage{stmaryrd}
 \usepackage{bbold}
+\usepackage{url, hyperref}
 
 %%% Commands %%%
 
@@ -108,10 +109,7 @@
 \begin{Exercise} Let $V$ be a random variable with uniform distribution on $[0, \pi / 2]$. Define the random variable $W=\sin (V)$.
   \begin{enumerate}
     \item Determine the distributions of $W$.
-
-    \item How does the distribution of $W$ change when $V$ has uniform distribution on
-          $[0, \pi]$ ?
-
+    \item How does the distribution of $W$ change when $V$ has uniform distribution on $[0, \pi]$ ?
   \end{enumerate}
 \end{Exercise}
 
@@ -141,16 +139,31 @@
   Donc $\frac1X$ a m\^eme loi que $X$.
 \end{solution}
 
-\begin{Exercise} ${ }^{*}$ Let $p>0$ and an integer $n$ such that $n>p$. Consider random variables $Y_{n}$ such that $n Y_{n}$ has a geometric distribution $\operatorname{Geo}\left(\frac{p}{n}\right)$ with parameter $\frac{p}{n}$. Show that the characteristic function of $Y_{n}$ tends to the characteristic function of an exponentially distributed random variable with parameter $p$.
-
+\begin{Exercise}
+  Let $p>0$ and an integer $n$ such that $n>p$. Consider random variables $Y_{n}$ such that $n Y_{n}$ has a geometric distribution $\operatorname{Geo}\left(\frac{p}{n}\right)$ with parameter $\frac{p}{n}$. Show that the characteristic function of $Y_{n}$ tends to the characteristic function of an exponentially distributed random variable with parameter $p$.
 \end{Exercise}
 
-\begin{Exercise} Let $\alpha>1$ be fixed. Consider the random variable $X$ with density given by
+\begin{solution}
+  We have :
+  \begin{align*}
+    \phi_{Y_n}(t) & = \esperance{e^{itY_n}}                              \\
+                  & = \sum_{k = 0}^\infty p e^{itk} (1-p)^{k+1}          \\
+                  & = p (1-p) \sum_{k = 0}^\infty (\exp{(it)}.(1-p))^{k} \\
+                  & = \frac{p (1-p) }{1-(1-p).\exp{(it)}}
+  \end{align*}
+  And if $X \sim Exp(p)$ :
+  \begin{align*}
+    \phi_{X}(t) & = \esperance{e^{itX}}                                      \\
+                & = \sum_{k = 0}^\infty p e^{itk} e^{-p} \frac{p^k}{k!}      \\
+                & = p e^{-p} \sum_{k = 0}^\infty \frac{(\exp{(it)}.p)^k}{k!} \\
+                & = p e^{-p} \exp{((\exp{(it)}.p))}
+  \end{align*}
+\end{solution}
 
+\begin{Exercise} Let $\alpha>1$ be fixed. Consider the random variable $X$ with density given by
   $$
     f(x)=c_{\alpha} x^{-\alpha} \mathbb{1}_{x \geq 1}
   $$
-
   \begin{enumerate}
     \item Determine the constant $c_{\alpha}$.
 
@@ -159,12 +172,51 @@
   \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item Necessarily, $\int_\R f(x) = 1$. So :
+          \begin{align*}
+                 & \int_\R c_{\alpha} x^{-\alpha} \mathbb{1}_{x \geq 1} dx = 1
+            \iff & c_{\alpha} \int_1^\infty x^{-\alpha} dx = 1
+            \iff & c_{\alpha} = \frac{-1}{\frac{1}{1-\alpha}}                  \\
+            \iff & c_{\alpha} = \alpha -1
+          \end{align*}
+    \item We have :
+          \begin{align*}
+            X \in L^p & \iff \esperance{X^p} < \infty                                  \\
+                      & \iff \int_\R x^p x^{-\alpha} \mathbb{1}_{x \geq 1} dx < \infty
+                      & \iff \int_1^\infty x^{p-\alpha} dx < \infty                    \\
+                      & \iff p - \alpha < -1
+          \end{align*}
+          To understant the last step, see \url{https://boilley.ovh/cours/integrale-generalisee.html}.
+          And finally the nessary and sufficient condition is $p - \alpha < -1$.
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise} Let $X$ and $Y$ be two independent random variables such that $X$ (resp. $Y$ ) has geometric distribution with parameter $p$ (resp. $q$ ).
   \begin{enumerate}
     \item Compute $\mathbb{P}(X>n)$ for any $n \in \mathbb{N}$.
     \item What is the distribution of the random variable $Z=\min (X, Y)$ ?
   \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item We have :
+          \begin{align*}
+            \proba{X > n} & = \sum_{k = n+1}^\infty p (1-p)^k \\
+                          & = (1-p)^{n+1}
+          \end{align*}
+          using a formula for the sum of geometric terms.
+    \item Let determine the value of $\proba{\min(X, Y) = k}$.
+          \begin{align*}
+            \proba{\min(X, Y) = k} & = \proba{(X = k \cap Y > k) \cup (X > k \cap Y = k) \cup (X = k \cap Y = k)}     \\
+                                   & = \proba{X = k \cap Y > k} + \proba{X > k \cap Y = k} + \proba{X = k \cap Y = k} \\
+                                   & = p (1-p)^k (1-q)^{k+1} + (1-p)^{k+1} q (1-q)^{k} + p (1-p)^k q (1-q)^{k}        \\
+                                   & = (1-p)^k (1-q)^k (p + q - pq)
+          \end{align*}
+  \end{enumerate}
+\end{solution}
 
 \begin{Exercise} Assume that $X \sim \mathcal{N}\left(\mu, \sigma^{2}\right)$.
   \begin{enumerate}
