@@ -9,8 +9,8 @@
 \begin{solution}
   Let $X$ a random variable on $[1/2, 2]$ with p.d.f. $f : x \to \frac{2}{3x}$ and $Y = 1/X$.
   \begin{enumerate}
-    \item $X$ and $1/X$ have same p.d.f. (prove it)
-    \item $X$ and $1/X$ are not the same random variable. Indeed :
+    \item $X$ and $1/X$ have same p.d.f.
+    \item $X$ and $1/X$ are not the same random variable. Indeed:
           $$\frac{X}{1/X} = X^2$$
           and $X^2$ is not equal to $1$ almost surely.
   \end{enumerate}
@@ -42,8 +42,8 @@
                                   & \approx 0.194
                   \end{align*}
             \item \begin{align*}
-                    \proba{X \geq 1} & = 1 - \proba{X = 0}              \\
-                                     & = 1 - \binom{10}{0} 0.1^0 0.9^10 \\
+                    \proba{X \geq 1} & = 1 - \proba{X = 0}                \\
+                                     & = 1 - \binom{10}{0} 0.1^0 0.9^{10} \\
                                      & \approx 0.651
                   \end{align*}
           \end{enumerate}
@@ -53,26 +53,30 @@
 \begin{Exercise}
   Let $\lambda>0$ be fixed. Let $X_{n}, n \geq 1$ be random variables with binomial distribution with parameters $n$ and $\lambda / n$, and $Y$ be a random variable with Poisson distribution with parameter $\lambda$. Show that, for any $k \in \mathbb{N}$,
 
-  $$
+  \[
     \lim _{n \rightarrow+\infty} \mathbb{P}\left(X_{n}=k\right)=\mathbb{P}(Y=k) .
-  $$
+  \]
 
-  Hint: Use Striling's approximation: $n ! \approx \sqrt{2 \pi n}\left(\frac{n}{\mathrm{e}}\right)^{n}$.
+  Hint: Use Striling's approximation: $n ! \approx \sqrt{2 \pi n}{\left(\frac{n}{\mathrm{e}}\right)}^{n}$.
 
   We will later see that this result means that $X_{n}$ converges in distribution to $Y$, or, to put it differently, that the binomial distribution with parameters $n$ and $\lambda / n$ converges to the Poisson distribution with parameter $\lambda$.
 \end{Exercise}
 
 \begin{solution}
-  We have :
+  We have:
   \begin{align*}
     \proba{X_n = k} & = \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k}        \\
                     & = \frac{n!}{k!(n-k)!} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \\
                     & = \frac{\lambda^k}{k!} \frac{n!}{(n-k)! n^k} \left(  1- \frac{\lambda}{n} \right)^{n-k}
   \end{align*}
-  And :
-  $$ \left(  1- \frac{\lambda}{n} \right)^{n-k} = \left(  1- \frac{\lambda}{n} \right)^{k} \left(  1- \frac{\lambda}{n} \right)^{n} $$
+  And:
+  \[
+    \left(  1- \frac{\lambda}{n} \right)^{n-k} = {\left(  1- \frac{\lambda}{n} \right)}^{k} \left(  1- \frac{\lambda}{n} \right)^{n}
+  \]
   with
-  $$ \left(  1- \frac{\lambda}{n} \right)^{k} \limitinftyn 0 $$
+  \[
+    \left(  1- \frac{\lambda}{n} \right)^{k} \limitinftyn 0
+  \]
   and
   \begin{align*}
     \left(  1- \frac{\lambda}{n} \right)^n & = e^{\log\left(  1- \frac{\lambda}{n} \right)^n}  \\
@@ -81,8 +85,10 @@
                                            & = e^{-\lambda}
   \end{align*}
   Also,
-  $$\frac{n!}{(n-k)!}= n.(n-1).(n-2). \cdot . (n-k+1) \thicksim n^k $$
+  \[ \frac{n!}{(n-k)!}= n.(n-1).(n-2). \cdot . (n-k+1) \thicksim n^k \]
   Finally,
-  $$ \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \thicksim \frac{\lambda^k}{k!} 1. e^{-\lambda} $$
+  \[
+    \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \thicksim \frac{\lambda^k}{k!} 1. e^{-\lambda}
+  \]
   This conclude the exercise.
 \end{solution}

@@ -6,7 +6,7 @@
 \usepackage{exercise}
 \renewcommand{\ExerciseHeader}{%
   \par\noindent
-  \textbf{\large \ExerciseName \, \ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \textbf{\large \ExerciseName{} \, \ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
   \par\nopagebreak\medskip
 }
 \usepackage[utf8]{inputenc}
@@ -21,20 +21,20 @@
 \newcommand{\proba}[1]{\mathbb{P}[#1]}
 \newcommand{\var}[1]{\operatorname{Var}[#1]}
 \newcommand{\esperance}[1]{\mathbb{E}[#1]}
-\newcommand{\limitinftyn}{\xrightarrow[n \to \infty]{}}
+\newcommand{\limitinftyn}{\xrightarrow[n \to{} \infty]{}}
 \newcommand{\indicator}[1]{\mathbb{1}_{#1}}
 
 %%% Solutions %%%
 
 \newtheorem{solution}{Solution}
-\newif\ifhidesolutions
+\newif\ifhidesolutions{}
 % \hidesolutionstrue %decommenter pour cacher les SOLUTIONS
 
-\ifhidesolutions
+\ifhidesolutions{}
 \usepackage{environ}
 \NewEnviron{hide}{}
-\let\solution\hide
-\let\endsolution\endhide
+\let\solution\hide{}
+\let\endsolution\endhide{}
 \fi
 
 %%% Title %%%
