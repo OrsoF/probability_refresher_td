@@ -3,12 +3,13 @@
 \end{center}
 
 \begin{Exercise}
-  Let $X$ be a random variable such that $\mathbb{E}\left[X^2\right]<+\infty$. Prove that :
+  Let $X$ be a random variable such that $\mathbb{E}\left[X^2\right]<+\infty$. Prove that:
   \begin{enumerate}
     \item $0 \leq \operatorname{Var}(X)<\infty$
     \item $\operatorname{Var}(X)=\mathbb{E}\left[X^2\right]-{(\mathbb{E}[X])}^2$.
     \item $\operatorname{Var}(X)=0 \Longleftrightarrow \mathbb{P}(X=c)=1$ for some constant $c$.
-    \item For any constants $a, b, \operatorname{Var}(a X+b)=\operatorname{Var}(a X)=a^2 \operatorname{Var}(X)$.
+    \item For any constants $a, b, \operatorname{Var}(a X+b)=\operatorname{Var}(a X)=a^2
+            \operatorname{Var}(X)$.
   \end{enumerate}
 \end{Exercise}
 
@@ -24,10 +25,12 @@
           \begin{enumerate}
             \item $\esperance{X^2}$ is finite so $\esperance{{(X+1)}^2}$ is. So $\esperance{X^2 + 2X + 1}$ is.
                   As $\esperance{X^2} +1$ is obviously finite, $\esperance{X}$ exists and is finite.
-            \item We have $\var{X} = \esperance{{(X-\esperance{X})}^2}$ which exists as $\esperance{X}$ is a constant. As $(X-\esperance{X})^2$ is almost surely positive, we have the wanted result.
+            \item We have $\var{X} = \esperance{{(X-\esperance{X})}^2}$ which exists as
+                  $\esperance{X}$ is a constant. As ${(X-\esperance{X})}^2$ is almost surely
+                  positive, we have the wanted result.
             \item We have:
                   \begin{align*}
-                    \var{X} & = \esperance{(X-\esperance{X})^2}                                     \\
+                    \var{X} & = \esperance{{(X-\esperance{X})}^2}                                   \\
                             & = \esperance{X^2} + \esperance{- 2.X.\esperance{X}} + \esperance{X}^2 \\
                             & = \esperance{X^2} - 2.\esperance{X}.\esperance{X} + \esperance{X}^2   \\
                             & = \esperance{X^2} - \esperance{X}^2
@@ -37,7 +40,7 @@
     \item Following the previous calculus, the wanted equality is true.
     \item We have:
           \begin{align*}
-            \var{X} = 0 & \iff \var{(X-\esperance{X})^2} = 0               \\
+            \var{X} = 0 & \iff \var{{(X-\esperance{X})}^2} = 0             \\
                         & \iff X - \esperance{X} = 0 almost surely         \\
                         & \iff X = \esperance{X} almost surely             \\
                         & \iff \exists c \in \mathbb{R}, \proba{X = c} = 1
@@ -45,9 +48,9 @@
 
     \item We have:
           \begin{align*}
-            \var{aX + b} & = \esperance{(aX+b - \esperance{aX+b})^2}        \\
-                         & = \esperance{(aX - \esperance{ax})^2} = \var{aX} \\
-                         & = a^2 \esperance{(X - \esperance{X})^2}          \\
+            \var{aX + b} & = \esperance{{(aX+b - \esperance{aX+b})}^2}        \\
+                         & = \esperance{{(aX - \esperance{ax})}^2} = \var{aX} \\
+                         & = a^2 \esperance{{(X - \esperance{X})}^2}          \\
                          & = a^2 \var{X}
           \end{align*}
   \end{enumerate}
@@ -74,7 +77,8 @@
           \end{enumerate}
           Let us begin.
           \begin{enumerate}
-            \item Let $\omega \in \Omega$. Consider the two cases $X(\omega) \geq a$ and $X(\omega) < a$ and prove that the wanted inequality is true in the two cases.
+            \item Let $\omega \in \Omega$. Consider the two cases $X(\omega) \geq a$ and
+                  $X(\omega) < a$ and prove that the wanted inequality is true in the two cases.
             \item As the indicator function is below or equal to $1$, the inequality is true.
           \end{enumerate}
     \item We have from 1.:
