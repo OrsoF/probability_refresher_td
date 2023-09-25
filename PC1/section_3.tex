@@ -11,13 +11,13 @@
   \begin{enumerate}
     \item $X$ and $1/X$ have same p.d.f.
     \item $X$ and $1/X$ are not the same random variable. Indeed:
-          $$\frac{X}{1/X} = X^2$$
+          \[ \frac{X}{1/X} = X^2 \]
           and $X^2$ is not equal to $1$ almost surely.
   \end{enumerate}
 \end{solution}
 
 \begin{Exercise}
-  In an oil region, the probability that one drilling leads to an oil slick is 0.1 .
+  In an oil region, the probability that one drilling leads to an oil slick is 0.1.
   \begin{enumerate}
     \item Justify that one drilling can be modeled using a Bernoulli distribution.
     \item We made 10 oil drillings. Let $X$ be the number of drillings that led to an oil slick.
@@ -35,7 +35,7 @@
 \begin{solution}
   \begin{enumerate}
     \item Bernoulli is a Success/Failure model with a given probability of succes.
-    \item Using definition of a binomial law :
+    \item Using definition of a binomial law:
           \begin{enumerate}
             \item \begin{align*}
                     \proba{X = 2} & = \binom{10}{2} .1^2 \times .9^8 \\
@@ -65,9 +65,9 @@
 \begin{solution}
   We have:
   \begin{align*}
-    \proba{X_n = k} & = \binom{n}{k} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k}        \\
-                    & = \frac{n!}{k!(n-k)!} \left( \frac{\lambda}{n} \right)^k \left(  1- \frac{\lambda}{n} \right)^{n-k} \\
-                    & = \frac{\lambda^k}{k!} \frac{n!}{(n-k)! n^k} \left(  1- \frac{\lambda}{n} \right)^{n-k}
+    \proba{X_n = k} & = \binom{n}{k} {\left( \frac{\lambda}{n} \right)}^k \left(  1- \frac{\lambda}{n} \right)^{n-k}      \\
+                    & = \frac{n!}{k!(n-k)!} \left( \frac{\lambda}{n} \right)^k {\left(  1- \frac{\lambda}{n} \right)}^{n-k} \\
+                    & = \frac{\lambda^k}{k!} \frac{n!}{(n-k)! n^k} \left( 1- \frac{\lambda}{n} \right)^{n-k}
   \end{align*}
   And:
   \[

@@ -16,14 +16,16 @@
     \item the exponential distribution $\operatorname{Exp}(\lambda)$ with $\lambda>0$.
 
     \item the normal distribution $\mathcal{N}\left(\mu, \sigma^{2}\right)$ of probability density function
-          $$ f(x) : x \to \frac{1}{\sqrt{2\pi \sigma^2}} e^{- \frac{(x-\mu)^2}{2 \sigma^2}}$$
+          \[
+            f(x) : x \to \frac{1}{\sqrt{2\pi \sigma^2}} e^{- \frac{{(x-\mu)}^2}{2 \sigma^2}}
+          \]
           with $\mu \in \mathbb{R}$ and $\sigma>0$.
 
   \end{enumerate}
 \end{Exercise}
 
 \begin{solution}
-  A lot of simple calculus !
+  A lot of simple calculus!
 \end{solution}
 
 \begin{Exercise}
@@ -37,7 +39,7 @@
 
 \begin{solution}
   \begin{enumerate}
-    \item Par int\'{e}gration par parties :
+    \item Par int\'{e}gration par parties:
           \[
             \mathbb{E}\left(X^{n}\right) = \int_{0}^{+\infty}x^{n}\lambda e^{-\lambda x}dx = \int_{0}^{+\infty}x^{n-1} e^{-\lambda x}dx = \frac{n}{\lambda}\mathbb{E}\left(X^{n-1}\right).
           \]
@@ -62,11 +64,11 @@
 
 \begin{solution}
   \begin{enumerate}
-    \item Let assume that $\proba{X = \infty} > 0$. Then :
-          $$\esperance{X} = \sum_{\omega \in \Omega} X(\omega) \proba{\omega}$$
+    \item Let assume that $\proba{X = \infty} > 0$. Then:
+          \[ \esperance{X} = \sum_{\omega \in \Omega} X(\omega) \proba{\omega} \]
           In the sum, there is $\omega \in \omega$ such that $X(\omega) = \infty$ and the sum cannot be finite.
-    \item $X$ is positive and therefore, as a sum of positive terms :
-          $$\esperance{X} = 0 \implies \sum_{\omega \in \Omega} X(\omega) \proba{\omega} = 0 \implies \forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0$$
-          Then "$\forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0$" can be red $\proba{X \geq 0} = 0$.
+    \item $X$ is positive and therefore, as a sum of positive terms:
+          \[\esperance{X} = 0 \implies \sum_{\omega \in \Omega} X(\omega) \proba{\omega} = 0 \implies \forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0 \]
+          Then ''$\forall \omega, X(\omega) = 0 \text{ or } P(\omega) = 0$'' can be red $\proba{X \geq 0} = 0$.
   \end{enumerate}
 \end{solution}
