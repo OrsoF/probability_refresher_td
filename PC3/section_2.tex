@@ -1,83 +1,105 @@
 \begin{center}
-    \section*{Random vectors}
+  \section*{Random vectors}
 \end{center}
 
 \begin{Exercise}
-    Denote
+  Denote
 
-$$
-f(x, y)=c \mathrm{e}^{-x} \mathbb{1}_{|y| \leq x} .
-$$
+  \[
+    f(x, y)=c \mathrm{e}^{-x} \mathbb{1}_{|y| \leq x} .
+  \]
 
-\begin{enumerate}
-  \item Find $c$ such that $f$ is a probability density function of a pair $(X, Y)$ of random variables.
+  \begin{enumerate}
+    \item Find $c$ such that $f$ is a probability density function of a pair $(X, Y)$ of
+          random variables.
 
-  \item Compute the marginal distributions of $X$ and $Y$.
+    \item Compute the marginal distributions of $X$ and $Y$.
 
-  \item Conclude on the independence of $X$ and $Y$. 
+    \item Conclude on the independence of $X$ and $Y$.
 
-\end{enumerate}
-
+  \end{enumerate}
 
 \end{Exercise}
 
 \begin{Exercise}
-    Let $X$ and $Y$ be two random variables taking their values in $\mathbb{N}$. Consider the joint probability mass function of $(X, Y)$ given by
+  Let $X$ and $Y$ be two random variables taking their values in $\mathbb{N}$. Consider the joint probability mass function of $(X, Y)$ given by
+  \[
+    \proba{(X = i) \cap (Y = j)} = \frac{a}{2^{i+j}}, i, j \in \mathbb{N}, a \in \mathbb{R} .
+  \]
+  \begin{enumerate}
+    \item Compute $a$.
+    \item Give the marginal distributions of $X$ and $Y$.
+    \item Are $X$ and $Y$ independent?
+  \end{enumerate}
+\end{Exercise}
 
-$$
-\mathbb{P}(X=i, Y=j)=\frac{a}{2^{i+j}}, i, j \in \mathbb{N}, a \in \mathbb{R} .
-$$
+\begin{solution}
+  \begin{enumerate}
+    \item We have:
+          \[
+            \sum_{i, j = 0}^\infty \frac{a}{2^{i+j}} = a {\left( \sum_{i =
+                  0}^\infty \frac{1}{2^i} \right)}^2 = a.2.2 = 4a
+          \]
+          Therefore, $4a = 1$ and finally $a = \frac{1}{4}$.
+    \item We have :
+          \begin{align*}
+            \proba{X = i} & = \sum_{j = 0}^\infty \proba{(X = i) \cap (Y = j)} \\
+                          & = \sum_{j = 0}^\infty \frac{1}{4.2^i.2^j}          \\
+                          & = \frac{1}{2^{i+1}}
+          \end{align*}
+          In the same way:
+          $$ \proba{Y = i} = \frac{1}{2^{i+1}} $$
+    \item We have : $$ \proba{(X = i) \cap (Y = j)} = \frac{1}{2^{i+j+2}} =
+            \left(\frac{1}{2^{i+1}} \right) \left(\frac{1}{2^{j+1}} \right) = \proba{X = i}
+            \proba{Y = j} $$ And the random variables are therefore independants.
+  \end{enumerate}
+\end{solution}
 
-\begin{enumerate}
-  \item Compute $a$.
+\begin{Exercise}
+  Denote
 
-  \item Give the marginal distributions of $X$ and $Y$.
+  $$
+    f(x, y)=a\left(x^{2}+y^{2}\right) \mathbb{1}_{(x, y) \in[-1,1]^{2}} .
+  $$
 
-  \item Are $X$ and $Y$ independent?
+  \begin{enumerate}
+    \item Find $a$ such that $f$ is a probability density. We denote $(X, Y)$ the pair of
+          random variables with joint distribution $f$.
 
-\end{enumerate}
+    \item Compute the marginal distributions of $X$ and $Y$.
+
+    \item Compute the covariance of $X$ and $Y$.
+
+    \item Are $X$ and $Y$ independent?
+
+  \end{enumerate}
 \end{Exercise}
 
 \begin{Exercise}
-    Denote
+  Let $\mathbf{X}=\left(X_{1}, X_{2}, X_{3}\right)$ be a random vector with the following covariance matrix
 
-$$
-f(x, y)=a\left(x^{2}+y^{2}\right) \mathbb{1}_{(x, y) \in[-1,1]^{2}} .
-$$
+  $$
+    \operatorname{Cov}(\mathbf{X})=\left(\begin{array}{lll}
+        2 & 1 & 3 \\
+        1 & 5 & 6 \\
+        3 & 6 & 9
+      \end{array}\right)
+  $$
 
-\begin{enumerate}
-  \item Find $a$ such that $f$ is a probability density. We denote $(X, Y)$ the pair of random variables with joint distribution $f$.
+  \begin{enumerate}
+    \item Give the variance of $X_{2}$ and the covariance between $X_{1}$ and $X_{3}$.
 
-  \item Compute the marginal distributions of $X$ and $Y$.
+    \item Compute the variance of $Z=X_{3}-\alpha_{1} X_{1}-\alpha_{2} X_{2}$ for
+          $\alpha_{1}, \alpha_{2} \in \mathbb{R}$.
 
-  \item Compute the covariance of $X$ and $Y$.
+    \item Deduce that $X_{3}$ is almost surely a linear combination of $X_{1}$ and
+          $X_{2}$.
 
-  \item Are $X$ and $Y$ independent?
+    \item More generally, let $\mathbf{Y}$ be a random vector. Give a necessary and
+          sufficient condition on the covariance matrix of $\mathbf{Y}$ ensuring that one
+          of the components of $\mathbf{Y}$ is almost surely a linear combination of the
+          components of $\mathbf{Y}$.
 
-\end{enumerate}
-\end{Exercise}
-
-\begin{Exercise}
-    Let $\mathbf{X}=\left(X_{1}, X_{2}, X_{3}\right)$ be a random vector with the following covariance matrix
-
-$$
-\operatorname{Cov}(\mathbf{X})=\left(\begin{array}{lll}
-2 & 1 & 3 \\
-1 & 5 & 6 \\
-3 & 6 & 9
-\end{array}\right)
-$$
-
-\begin{enumerate}
-  \item Give the variance of $X_{2}$ and the covariance between $X_{1}$ and $X_{3}$.
-
-  \item Compute the variance of $Z=X_{3}-\alpha_{1} X_{1}-\alpha_{2} X_{2}$ for $\alpha_{1}, \alpha_{2} \in \mathbb{R}$.
-
-  \item Deduce that $X_{3}$ is almost surely a linear combination of $X_{1}$ and $X_{2}$.
-
-  \item More generally, let $\mathbf{Y}$ be a random vector. Give a necessary and sufficient condition on the covariance matrix of $\mathbf{Y}$ ensuring that one of the components of $\mathbf{Y}$ is almost surely a linear combination of the components of $\mathbf{Y}$.
-
-\end{enumerate}
+  \end{enumerate}
 
 \end{Exercise}
-

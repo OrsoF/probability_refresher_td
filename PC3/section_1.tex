@@ -1,38 +1,63 @@
 \begin{center}
-    \section*{Gamma distribution}
+  \section*{Gamma distribution}
 \end{center}
 
 \begin{Exercise}
-    (Gamma distribution). One says that $X$ has Gamma distribution with parameters $p>0$ et $\theta>0$, denoted by $\gamma(p, \theta)$, if its density is given by
+  (Gamma distribution). One says that $X$ has Gamma distribution with parameters $p>0$ et $\theta>0$, denoted by $\gamma(p, \theta)$, if its density is given by
 
-$$
-f(x)=\frac{\theta^{p}}{\Gamma(p)} \exp (-\theta x) x^{p-1} \mathbb{1}_{[0,+\infty[}(x) .
-$$
+  \[
+    f(x)=\frac{\theta^{p}}{\Gamma(p)} \exp (-\theta x) x^{p-1} \indicator{ [0,+\infty[ }(x)
+  \]
 
-The associated characteristic function is given by
+  The associated characteristic function is given by
 
-$$
-\Phi_{X}(t)=\frac{1}{(1-i t / \theta)^{p}}, \quad t \in \mathbb{R} .
-$$
+  \[
+    \Phi_{X}(t)=\frac{1}{(1-i t / \theta)^{p}}, \quad t \in \mathbb{R} .
+  \]
 
-Here $\Gamma(\cdot)$ denotes the Gamma function defined as
+  Here $\Gamma(\cdot)$ denotes the Gamma function defined as
 
-$$
-\forall \alpha>0, \quad \Gamma(\alpha)=\int_{0}^{\infty} x^{\alpha-1} \exp (-x) \mathrm{d} x, \quad \Gamma(\alpha+1)=\alpha \Gamma(\alpha), \quad \Gamma(1 / 2)=\sqrt{\pi} .
-$$
+  \[
+    \forall \alpha>0, \quad \Gamma(\alpha)=\int_{0}^{\infty} x^{\alpha-1} \exp (-x) \mathrm{d} x, \quad \Gamma(\alpha+1)=\alpha \Gamma(\alpha), \quad \Gamma(1 / 2)=\sqrt{\pi}
+  \]
 
-\begin{enumerate}
-  \item Compute $\mathbb{E}\left[X^{k}\right]$ for $k \geq 1$. Deduce that $\mathbb{E}[X]=p / \theta$ and $\operatorname{Var}(X)=p / \theta^{2}$.
+  \begin{enumerate}
+    \item Compute $\mathbb{E}\left[X^{k}\right]$ for $k \geq 1$. Deduce that
+          $\mathbb{E}[X]=p / \theta$ and $\operatorname{Var}(X)=p / \theta^{2}$.
+    \item Let $a>0$. Show that $X / a \sim \gamma(p, a \theta)$.
+    \item Let $X$ and $Y$ be two independent random variables with Gamma distribution
+          $\gamma\left(p_{1}, \theta\right)$ and $\gamma\left(p_{2}, \theta\right)$,
+          respectively. Show that $X+Y \sim \gamma\left(p_{1}+p_{2}, \theta\right)$.
 
-  \item Let $a>0$. Show that $X / a \sim \gamma(p, a \theta)$.
+    \item Let $Z$ have standard normal distribution $\mathcal{N}(0,1)$. What is the
+          distribution of $Z^{2}$?
 
-  \item Let $X$ and $Y$ be two independent random variables with Gamma distribution $\gamma\left(p_{1}, \theta\right)$ and $\gamma\left(p_{2}, \theta\right)$, respectively. Show that $X+Y \sim \gamma\left(p_{1}+p_{2}, \theta\right)$.
+    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with
+          exponential distribution $\operatorname{Exp}(\theta)$. Determine the
+          distribution of the sum $S_{n}=X_{1}+\cdots+X_{n}$. Compute
+          $\mathbb{E}\left[S_{n}\right]$ and $\operatorname{Var}\left(S_{n}\right)$.
 
-  \item Let $Z$ have standard normal distribution $\mathcal{N}(0,1)$. What is the distribution of $Z^{2}$ ?
-
-  \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with exponential distribution $\operatorname{Exp}(\theta)$. Determine the distribution of the sum $S_{n}=X_{1}+\ldots+X_{n}$. Compute $\mathbb{E}\left[S_{n}\right]$ and $\operatorname{Var}\left(S_{n}\right)$.
-
-  \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with standard normal distribution $\mathcal{N}(0,1)$. Determine the distribution of the sum $S_{n}^{\prime}=X_{1}^{2}+\ldots+X_{n}^{2}$. Compute $\mathbb{E}\left[S_{n}^{\prime}\right]$ and $\operatorname{Var}\left(S_{n}^{\prime}\right)$.
-\end{enumerate}
-
+    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with
+          standard normal distribution $\mathcal{N}(0,1)$. Determine the distribution of
+          the sum $S_{n}^{\prime}=X_{1}^{2}+\cdots+X_{n}^{2}$. Compute
+          $\mathbb{E}\left[S_{n}^{\prime}\right]$ and
+          $\operatorname{Var}\left(S_{n}^{\prime}\right)$.
+  \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item We have:
+          \begin{align*}
+            \esperance{X^k} & = \frac{\theta^{p}}{\Gamma(p)} \int_0^\infty e^{-\theta t} . t^{p-1} dt                                                                                                     \\
+                            & = \frac{\theta^{p}}{\Gamma(p)} \left[ e^{-\theta t} . \frac{t^p}{p} \right]_0^\infty - \frac{\theta^{p}}{\Gamma(p)} \int_0^\infty  -\theta e^{-\theta t} . \frac{t^p}{p} dt \\
+                            & = \frac{\theta^{p+1}}{p \Gamma(p)} \int_0^\infty e^{-\theta t} . \frac{t^p}{p} dt                                                                                           \\
+                            & = \frac{\theta^{p+1}}{\Gamma(p)} \int_0^\infty e^{-\theta t} . t^p dt                                                                                                       \\
+                            & = \esperance{X^{k+1}}
+          \end{align*}
+          Therefore,
+          \[
+            \forall k \geq 0, ~ \esperance{X^k} = \esperance{X^0} = 1
+          \]
+  \end{enumerate}
+\end{solution}
