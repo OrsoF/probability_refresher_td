@@ -85,8 +85,26 @@
 \end{Exercise}
 
 \begin{solution}
-  The density of $\log (X)$ is a log normal distribution:
-  \[ f_{\log (X)}(x) = \frac{1}{x\sqrt{2\pi}} \exp{\left( -\frac{{(\log(x))}^2}{2} \right)} \]
+  The density of $X$ is a log normal distribution:
+  \[
+    f_{X}(x) = \frac{1}{x\sqrt{2\pi}} \exp{\left( -\frac{{(\log(x))}^2}{2} \right)}
+  \]
+  Indeed,
+  \begin{align*}
+    F_{\log(X)}(x) & = \proba{\log(X) \leq x}                                                        \\
+                   & = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}} \exp{\left( -\frac{x^2}{2} \right)} dt
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    F_{X}(x) & = \proba{X \leq x}                                                                                                                     \\
+             & = \proba{\log(X) \leq \log(x)}                                                                                                         \\
+             & = \int_{-\infty}^{\log(x)} \frac{1}{\sqrt{2\pi}} \exp{\left( -\frac{x^2}{2} \right)} dt                                                \\
+             & = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} \exp{\left( -\frac{{\log(u)}^2}{2} \right)} \frac{du}{u} \text{ with new variable } u = e^x
+  \end{align*}
+  And Therefore
+  \[
+    f_X(x) = \frac{d}{dx} \left( \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} \exp{\left( -\frac{{\log(u)}^2}{2} \right)} \frac{du}{u} \right) = \frac{1}{x\sqrt{2\pi}} \exp{\left( -\frac{{\log(x)}^2}{2} \right)}
+  \]
 \end{solution}
 
 \begin{Exercise}
@@ -114,13 +132,12 @@
           \[
             \proba{Y \leq t} = 1 - \indicator{a \geq t} \proba{X \geq t}
           \]
-          \begin{figure}
+          \begin{figure}[h]
             \centering
             \includegraphics[width=0.6\textwidth]{cdf.png}
           \end{figure}
-    \item As the cumulative distribution function is not continuous, the density could
-          not exist.
-    \item We have :
+    \item As the cumulative distribution function is not continuous, the density could not exist : if $X$ has a density $f_X$, $F_X$ should be a continuous function.
+    \item We have:
           \begin{align*}
             \esperance{Y} & = \esperance{X \mathbb{1}_{X \leq a} } + a \esperance{\mathbb{1}_{X>a}} \\
                           & = \int_0^a t e^{-t} dt + a \proba{X > a}                                \\
