@@ -11,11 +11,9 @@
 }
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{amsmath, amsfonts, amssymb, stmaryrd, bbold, url, hyperref}
 \usepackage[version=4]{mhchem}
-\usepackage{stmaryrd}
-\usepackage{bbold}
-\usepackage{url, hyperref}
+\usepackage{graphicx}
 
 %%% Commands %%%
 
@@ -104,6 +102,34 @@
   \end{enumerate}
 \end{Exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item We have, $\forall t \in \R^+$:
+          \begin{align*}
+            \proba{Y \geq t} & = \proba{\min(X, a) \geq t}             \\
+                             & = \proba{(X \geq t) \cap (a \geq t)}    \\
+                             & = \indicator{a \geq t} \proba{X \geq t}
+          \end{align*}
+          Therefore,
+          \[
+            \proba{Y \leq t} = 1 - \indicator{a \geq t} \proba{X \geq t}
+          \]
+          \begin{figure}
+            \centering
+            \includegraphics[width=0.6\textwidth]{cdf.png}
+          \end{figure}
+    \item As the cumulative distribution function is not continuous, the density could
+          not exist.
+    \item We have :
+          \begin{align*}
+            \esperance{Y} & = \esperance{X \mathbb{1}_{X \leq a} } + a \esperance{\mathbb{1}_{X>a}} \\
+                          & = \int_0^a t e^{-t} dt + a \proba{X > a}                                \\
+                          & = 1 - (a+1) e^{-a} + a e^{-a}                                           \\
+                          & = 1 - e^{-a}
+          \end{align*}
+  \end{enumerate}
+\end{solution}
+
 \begin{Exercise} Let $V$ be a random variable with uniform distribution on $[0, \pi / 2]$. Define the random variable $W=\sin (V)$.
   \begin{enumerate}
     \item Determine the distributions of $W$.
@@ -111,6 +137,26 @@
           $[0, \pi]$?
   \end{enumerate}
 \end{Exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item We have:
+          \begin{align*}
+            \proba{W \leq t} & = \proba{\sin(V) \leq t}    \\
+                             & = \proba{V \leq \arcsin(t)} \\
+                             & = \frac{2 \arcsin(t)}{\pi}
+          \end{align*}
+    \item Let $0 \leq t \leq 1$ and $\theta \in [0, \frac{\pi}{2}]$ such that
+          $\sin(\theta) = t$. If $V$ is uniform on $[0, \pi]$:
+          \begin{align*}
+            \proba{W \leq t} & = \proba{\sin(V) \leq t}                              \\
+                             & = \proba{V \leq \theta} + \proba{V \geq \pi - \theta} \\
+                             & = \frac{\theta + \pi - (\pi - \theta)}{\pi}           \\
+                             & = \frac{2 \theta}{\pi}
+          \end{align*}
+          Therefore, the distribution of $\sin(V)$ has not changed.
+  \end{enumerate}
+\end{solution}
 
 \begin{Exercise} (Cauchy distribution). Let $X$ be a random variable with Cauchy distribution whose density is given by $f(x)={\left(\pi\left(1+x^{2}\right)\right)}^{-1}$. Determine the distribution of $1 / X$ using a change of variables.
 \end{Exercise}
@@ -143,17 +189,33 @@
 \end{Exercise}
 
 \begin{solution}
-  We have:
+  Let $p_n = \frac{p}{n}$. We have:
   \begin{align*}
-    \phi_{Y_n}(t)
+    \phi_{Y_n}(t) & = \esperance{e^{itY_n}}                                     \\
+                  & = \esperance{e^{i \frac{t}{n} nY_n}}                        \\
+                  & = \sum_{k = 1}^\infty p_n e^{i\frac{t}{n}k} {(1-p_n)}^{k-1} \\
+                  & = \frac{p_n}{1 - (1-p_n) e^{i\frac{t}{n}}}
   \end{align*}
+  But:
+  \begin{align*}
+    (1-p_n) e^{i\frac{t}{n}} & \sim (1-p_n) (1 + i \frac{t}{n})              \\
+                             & = 1 - p_n + i \frac{t}{n} - p_n i \frac{t}{n}
+  \end{align*}
+  Therefore:
+  \[
+    1 - (1-p_n) e^{i\frac{t}{n}} = p_n - i \frac{t}{n} + p_n i \frac{t}{n}
+  \]
+  And finally
+  \[
+    \frac{p_n}{1 - (1-p_n) e^{i\frac{t}{n}}} \to \frac{p}{p - it}
+  \]
   And if $X \sim Exp(p)$:
   \begin{align*}
-    \phi_{X}(t) & = \esperance{e^{itX}}                                        \\
-                & = \sum_{k = 0}^\infty p e^{itk} e^{-p} \frac{p^k}{k!}        \\
-                & = p e^{-p} \sum_{k = 0}^\infty \frac{{(\exp{(it)}.p)}^k}{k!} \\
-                & = p e^{-p} \exp{((\exp{(it)}.p))}
+    \phi_{X}(t) & = \esperance{e^{itX}}                                 \\
+                & = \sum_{k = 0}^\infty p e^{itk} e^{-p} \frac{p^k}{k!} \\
+                & = \frac{p}{p-it}
   \end{align*}
+  which conclude the execise.
 \end{solution}
 
 \begin{Exercise} Let $\alpha>1$ be fixed. Consider the random variable $X$ with density given by
@@ -162,9 +224,7 @@
   \]
   \begin{enumerate}
     \item Determine the constant $c_{\alpha}$.
-
     \item For which values of $p$ we have $X$ belongs to $L^{p}$?
-
   \end{enumerate}
 \end{Exercise}
 
@@ -200,16 +260,16 @@
   \begin{enumerate}
     \item We have:
           \begin{align*}
-            \proba{X > n} & = \sum_{k = n+1}^\infty p {(1-p)}^k \\
-                          & = {(1-p)}^{n+1}
+            \proba{X > n} & = \sum_{k = n+1}^\infty p {(1-p)}^{k-1} \\
+                          & = {(1-p)}^n
           \end{align*}
           using a formula for the sum of geometric terms.
     \item Let determine the value of $\proba{\min(X, Y) = k}$.
           \begin{align*}
-            \proba{\min(X, Y) = k} & = \proba{(X = k \cap Y > k) \cup (X > k \cap Y = k) \cup (X = k \cap Y = k)}          \\
-                                   & = \proba{X = k \cap Y > k} + \proba{X > k \cap Y = k} + \proba{X = k \cap Y = k}      \\
-                                   & = p {(1-p)}^k {(1-q)}^{k+1} + {(1-p)}^{k+1} q {(1-q)}^{k} + p {(1-p)}^k q {(1-q)}^{k} \\
-                                   & = {(1-p)}^k {(1-q)}^k (p + q - pq)
+            \proba{\min(X, Y) = k} & = \proba{(X = k \cap Y > k) \cup (X > k \cap Y = k) \cup (X = k \cap Y = k)}      \\
+                                   & = \proba{X = k \cap Y > k} + \proba{X > k \cap Y = k} + \proba{X = k \cap Y = k}  \\
+                                   & = p {(1-p)}^k {(1-q)}^{k} + {(1-p)}^{k} q {(1-q)}^{k} + p {(1-p)}^k q {(1-q)}^{k} \\
+                                   & = {(1-p)}^k {(1-q)}^k (p + q + pq)
           \end{align*}
   \end{enumerate}
 \end{solution}
