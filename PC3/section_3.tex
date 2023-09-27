@@ -3,7 +3,7 @@
 \end{center}
 
 \begin{Exercise}
-  Let $\left\{X_{i}\right\}_{i \geq 0}$ be a sequence of i.i.d. Bernoulli variables with parameter $\theta$.
+  Let ${\left\{X_{i}\right\}}_{i \geq 0}$ be a sequence of i.i.d. Bernoulli variables with parameter $\theta$.
   \begin{enumerate}
     \item Show that $\sqrt{n}\left(\bar{X}_{n}-\theta\right)
             \stackrel{d}{\longrightarrow} \mathcal{N}(0, \theta(1-\theta))$, where
@@ -12,7 +12,7 @@
     \item Show that $\bar{X}_{n}\left(1-\bar{X}_{n}\right) \stackrel{P}{\longrightarrow}
             \theta(1-\theta)$.
 
-    \item Show that $\sqrt{n}\left(\bar{X}_{n}-\theta\right)^{2}
+    \item Show that $\sqrt{n}{\left(\bar{X}_{n}-\theta\right)}^{2}
             \stackrel{P}{\longrightarrow} 0$.
 
     \item Determine the limit distribution of
@@ -30,11 +30,15 @@
           La fonction $h(x)=x(1-x)$ \'etant continue, on obtient par le th\'eor\`eme de
           continuit\'e, $\bar{X}_n(1-\bar{X}_n)=h(\bar{X}_n)\overset{P}{\rightarrow}
             h(\theta)=\theta(1-\theta)$.
-    \item On a $$\sqrt{n} ( \bar{X}_n - \theta)^2= \underbrace{\sqrt{n} ( \bar{X}_n -
+    \item On a
+          \[
+            \sqrt{n} ( \bar{X}_n - \theta)^2= \underbrace{\sqrt{n} ( \bar{X}_n -
               \theta)}_{\overset{d}{\rightarrow} \mathcal N
               (0,\theta(1-\theta))}\underbrace{( \bar{X}_n -
               \theta)}_{\overset{P}{\rightarrow} 0} \overset{d}{\rightarrow} 0\times \mathcal
-            N (0,\theta(1-\theta))=0. $$ La convergence en loi vers une constante est
+            N (0,\theta(1-\theta))=0
+          \]
+          La convergence en loi vers une constante est
           \'equivalente \`a la convergence en probabilit\'e, d'o\`u le r\'esultat.
     \item On \'ecrit
           \begin{align*}
@@ -42,14 +46,14 @@
              & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)+\theta(1 - \bar{X}_n) - \theta(1-\theta) \right)                                                                            \\
              & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)-\theta( \bar{X}_n -\theta) \right)                                                                                          \\
              & = \underbrace{\sqrt{n}   (\bar{X}_n-\theta)}_{\overset{d}{\rightarrow} \mathcal N (0,\theta(1-\theta))} \underbrace{(1 - \bar{X}_n-\theta)}_{\overset{P}{\rightarrow} 1-2\theta} \\
-             & \overset{d}{\rightarrow} (1-2\theta) \mathcal N (0,\theta(1-\theta))= \mathcal N (0,(1-2\theta)^2\theta(1-\theta)),
+             & \overset{d}{\rightarrow} (1-2\theta) \mathcal N (0,\theta(1-\theta))= \mathcal N (0,{(1-2\theta)}^2\theta(1-\theta)),
           \end{align*}
           par le lemme de Slutsky.
   \end{enumerate}
 \end{solution}
 
 \begin{Exercise}
-  Let $\left(X_{n}\right)_{n \geq 1}$ be a sequence of i.i.d. square-integrable random variables with mean $m$ and variance $\sigma^{2}>0$. Denote $\bar{X}_{n}=\frac{1}{n} \sum_{i=1}^{n} X_{i}$ and $\hat{\sigma}_{n}^{2}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}$.
+  Let ${\left(X_{n}\right)}_{n \geq 1}$ be a sequence of i.i.d.\,square-integrable random variables with mean $m$ and variance $\sigma^{2}>0$. Denote $\bar{X}_{n}=\frac{1}{n} \sum_{i=1}^{n} X_{i}$ and $\hat{\sigma}_{n}^{2}=\frac{1}{n} \sum_{i=1}^{n}{\left(X_{i}-\bar{X}_{n}\right)}^{2}$.
 
   \begin{enumerate}
     \item Show that $\hat{\sigma}_{n}^{2}$ converges in probability to $\sigma^{2}$ as $n
@@ -65,17 +69,17 @@
   Commen\c cons par \'etudier le comportement limite de $\hat{\sigma}_n^2$ quand $n\to +\infty$.
   \begin{align*}
     (n-1)\hat{\sigma}_n^2
-     & =\sum_{k=1}^n(X_k-\bar X_n)^2                                                 \\
-     & =  \sum_{k=1}^n(X_k-m)^2 + 2\sum_{k=1}^n(X_k-m)(m-\bar X_n) + n(m-\bar X_n)^2 \\
-     & = \sum_{k=1}^n(X_k-m)^2 - n(m-\bar X_n)^2.
+     & =\sum_{k=1}^n{(X_k-\bar X_n)}^2                                                  \\
+     & = \sum_{k=1}^n{(X_k-m)}^2 + 2\sum_{k=1}^n(X_k-m)(m-\bar X_n) + n{(m-\bar X_n)}^2 \\
+     & = \sum_{k=1}^n{(X_k-m)}^2 - n{(m-\bar X_n)}^2.
   \end{align*}
   Donc
   \begin{align*}
-    \frac{n-1}{n}\hat{\sigma}_n^2 & = \frac{1}{n}\sum_{k=1}^n(X_k-m)^2 - (m-\bar X_n)^2                           \\
-                                  & \overset{p.s.}{\longrightarrow}\esperance{}[(X_1-m)^2]-0= \mathrm{Var}(X_1)=:
+    \frac{n-1}{n}\hat{\sigma}_n^2 & = \frac{1}{n}\sum_{k=1}^n(X_k-m)^2 - {(m-\bar X_n)}^2                           \\
+                                  & \overset{p.s.}{\longrightarrow}\esperance{}[{(X_1-m)}^2]-0= \mathrm{Var}(X_1)=:
     \sigma^2,
   \end{align*}
-  o\`u la limite est donn\'ee par la loi des grands nombres. Par suite, $\hat{\sigma}_n \to \sigma$ presque s\^urement. Notons $Z_n = \sqrt{n}(\bar X_n-m)$ qui converge en loi, d'apr\`es le th\'eor\`eme limite central vers une variable al\'eatoire gaussienne $Z\sim \mathcal{N}(0,\sigma^2)$. D'apr\`es le lemme de Slutsky, le couple $(Z_n,\hat{\sigma}_n^{-1})$ converge en loi vers $(Z,\sigma^{-1})$. En particulier, la fonction produit \'etant continue, $\frac{Z_n}{\hat{\sigma}_n} \overset{d}{\rightarrow} Z/\sigma \sim \mathcal{N}(0,1).$
+  o\`u la limite est donn\'ee par la loi des grands nombres. Par suite, $\hat{\sigma}_n \to \sigma$ presque s\^urement. Notons $Z_n = \sqrt{n}(\bar X_n-m)$ qui converge en loi, d'apr\`es le th\'eor\`eme limite central vers une variable al\'eatoire gaussienne $Z\sim \mathcal{N}(0,\sigma^2)$. D'apr\`es le lemme de Slutsky, le couple $(Z_n,\hat{\sigma}_n^{-1})$ converge en loi vers $(Z,\sigma^{-1})$. En particulier, la fonction produit \'etant continue, $\frac{Z_n}{\hat{\sigma}_n} \overset{d}{\rightarrow} Z/\sigma \sim \mathcal{N}(0,1)$
 \end{solution}
 
 \begin{Exercise}
@@ -103,11 +107,15 @@
     \item On rappelle, pour $X\sim\mathcal P(\lambda)$, $\lambda>0$, on a
           $\esperance{}[X]=\var(X)=\lambda$. Alors l'estimateur $\bar X_n$ est alors sans
           biais ($\esperance{}[\bar X_n] =\lambda$), consistant en vertu de la LFGN
-          ($\bar X_n\longrightarrow \esperance{}[X_1]=\lambda~p.s.$), et enfin,
-          $\bar{X}_n$ est asymptotiquement normal par le TCL: $$\sqrt n( \bar{X}
+          ($\bar X_n\longrightarrow \esperance{}[X_1]=\lambda~p.s$), et enfin,
+          $\bar{X}_n$ est asymptotiquement normal par le TCL:
+          \[
+            \sqrt n( \bar{X}
             _n-\lambda)=\sqrt n( \bar X_n-\esperance{}[X_1])\stackrel{\mathcal
               L}\longrightarrow\mathcal N(0,\var(X_1))=\mathcal
-            N(0,\lambda),\quad\text{lorsque }n\to\infty.$$
+            N(0,\lambda),\quad\text{lorsque }n\to\infty
+          \]
+
     \item En utilisant la question a et le lemme de Slutsky, on obtient
           \begin{align*}
             \sqrt n \left(\frac{\bar X_n-\lambda}{\sqrt{\bar X_n}} \right)
@@ -115,15 +123,27 @@
             \stackrel{\mathcal L}\longrightarrow\mathcal N(0,1).
           \end{align*}
     \item D'apr\`es la delta m\'ethode, pour toute fonction $g$ continument d\'erivable
-          sur $\R_+$, on a $$\sqrt n \left(g(\bar X_n)-g(\lambda)
+          sur $\R_+$, on a
+          \[
+            \sqrt n \left(g(\bar X_n)-g(\lambda)
             \right)\stackrel{\mathcal L}\longrightarrow\mathcal
-            N(0,(g'(\lambda))^2\var(X)).$$ Nous cherchons donc une fonction $g$ telle que
-          la variance limite vaut 1. Ce qui veut dire $$(g'(\lambda))^2\var(X)=1
-            \Leftrightarrow (g'(\lambda))^2 = \frac1\lambda. $$ On peut alors choisir $g(u)
-            = 2\sqrt u$ avec d\'eriv\'ee $g'(u)= 1/\sqrt u$ et on obtient $$\sqrt n
-            \left(2\sqrt{\bar X_n}-2\sqrt \lambda) \right)\stackrel{\mathcal
+            N(0,{(g'(\lambda))}^2\var(X))
+          \]
+          Nous cherchons donc une fonction $g$ telle que
+          la variance limite vaut 1. Ce qui veut dire
+          \[
+            {(g'(\lambda))}^2\var(X)=1
+            \Leftrightarrow {(g'(\lambda))}^2 = \frac1\lambda
+          \]
+          On peut alors choisir $g(u)
+            = 2\sqrt u$ avec d\'eriv\'ee $g'(u)= 1/\sqrt u$ et on obtient
+          \[
+            \sqrt n
+            \left(2\sqrt{\bar X_n}-2\sqrt \lambda \right)\stackrel{\mathcal
               L}\longrightarrow\mathcal
-            N\left(0,\left(\frac1{\sqrt\lambda}\right)^2\lambda\right)=\mathcal N(0,1).$$
+            N\left(0,{\left(\frac1{\sqrt\lambda}\right)}^2\lambda\right)=\mathcal N(0,1).
+          \]
+
   \end{enumerate}
 
 \end{solution}
@@ -131,20 +151,20 @@
 \begin{Exercise}
   Define the random variable
 
-  $$
+  \[
     Y=\mathbb{1}\{\theta>X\}
-  $$
+  \]
 
   where $\theta \in \mathbb{R}$ and $X$ is a random variable with standard normal
   distribution $\mathcal{N}(0,1)$. We observe a sample $Y_{1}, \ldots, Y_{n}$ of
-  i.i.d. realizations of $Y$ and suppose that parameter $\theta$ is unknown.
+  i.i.d.\,realizations of $Y$ and suppose that parameter $\theta$ is unknown.
   Denote by $\Phi$ the cumulative distribution function of the standard normal
   distribution $\mathcal{N}(0,1)$. An estimator $\hat{\theta}_{n}$ of $\theta$ is
   given by
 
-  $$
+  \[
     \hat{\theta}_{n}=\Phi^{-1}\left(\bar{Y}_{n}\right)
-  $$
+  \]
 
   where $\bar{Y}_{n}=\frac{1}{n} \sum_{i=1}^{n} Y_{i}$
 
@@ -163,25 +183,25 @@
   \begin{enumerate}
     \item
           Comme $Y$ prend ses valeurs dans $\{0,1\}$, $Y$ suit une loi de Bernoulli avec
-          param\`etre $\P(Y=1) = \P(\theta>\xi) = \Phi(\theta).$
+          param\`etre $\P(Y=1) = \P(\theta>\xi) = \Phi(\theta)$
 
     \item
-          Puisque $\frac1n\sum_{i=1}^nY_i\to\esperance{}[Y_1]=\Phi(\theta)~p.s.$ et $\Phi^{-1}$ est
-          une fonction continue, on a $\hat \theta_n=\Phi^{-1}(\frac1n\sum_{i=1}^nY_i)\to
-            \Phi^{-1}(\Phi(\theta))=\theta~p.s.$. Donc $\hat\theta_n$ est consistant pour
+          Puisque $\frac1n\sum_{i=1}^n Y_i\to\esperance{}[Y_1]=\Phi(\theta)~p.s$ et $\Phi^{-1}$ est
+          une fonction continue, on a $\hat \theta_n=\Phi^{-1}(\frac1n\sum_{i=1}^n Y_i)\to
+            \Phi^{-1}(\Phi(\theta))=\theta~p.s$. Donc $\hat\theta_n$ est consistant pour
           $\theta$.
 
     \item
           En vertu du TCL (car $\esperance{}[Y^2_1]<\infty$), on a $\sqrt
-            n(\frac1n\sum_{i=1}^nY_i-\Phi(\theta))\stackrel{\mathcal
+            n(\frac1n\sum_{i=1}^n Y_i-\Phi(\theta))\stackrel{\mathcal
               L}\longrightarrow\mathcal N(0,\var(Y_1))=\mathcal
             N(0,\Phi(\theta)(1-\Phi(\theta)))$. La fonction $\Phi^{-1}(\theta)$ est
           continument d\'erivable avec d\'eriv\'ee $(\Phi^{-1})'(\theta) =
             1/\varphi(\Phi^{-1}(\theta))$. On obtient par la delta-m\'ethode
           \begin{align*}
-            \sqrt n(\hat\theta_n-\theta) =\sqrt n\left(\Phi^{-1}\left(\frac1n\sum_{i=1}^nY_i\right)-\Phi^{-1}(\Phi(\theta))\right)
-             & \stackrel{\mathcal L}\longrightarrow \mathcal N(0, ((\Phi^{-1})'(\Phi(\theta)))^2   \Phi(\theta)(1-\Phi(\theta))) \\
-             & =\mathcal N\left(0, \frac{  \Phi(\theta)(1-\Phi(\theta))}{ \varphi^2(\theta)}\right).
+            \sqrt n(\hat\theta_n-\theta) =\sqrt n\left(\Phi^{-1}\left(\frac1n\sum_{i=1}^n Y_i\right)-\Phi^{-1}(\Phi(\theta))\right)
+             & \stackrel{\mathcal L}\longrightarrow \mathcal N(0, {((\Phi^{-1})'(\Phi(\theta)))}^2   \Phi(\theta)(1-\Phi(\theta))) \\
+             & =\mathcal N\left(0, \frac{  \Phi(\theta)(1-\Phi(\theta))}{ \varphi^2(\theta)}\right)
           \end{align*}
 
   \end{enumerate}
