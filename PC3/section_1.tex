@@ -2,21 +2,18 @@
   \section*{Gamma distribution}
 \end{center}
 
+%%% Exercise 1 %%%
+
 \begin{Exercise}
   (Gamma distribution). One says that $X$ has Gamma distribution with parameters $p>0$ et $\theta>0$, denoted by $\gamma(p, \theta)$, if its density is given by
-
   \[
     f(x)=\frac{\theta^{p}}{\Gamma(p)} \exp (-\theta x) x^{p-1} \indicator{ [0,+\infty[ }(x)
   \]
-
   The associated characteristic function is given by
-
   \[
-    \Phi_{X}(t)=\frac{1}{(1-i t / \theta)^{p}}, \quad t \in \mathbb{R} .
+    \Phi_{X}(t)=\frac{1}{{(1-i t / \theta)}^{p}}, \quad t \in \mathbb{R} .
   \]
-
   Here $\Gamma(\cdot)$ denotes the Gamma function defined as
-
   \[
     \forall \alpha>0, \quad \Gamma(\alpha)=\int_{0}^{\infty} x^{\alpha-1} \exp (-x) \mathrm{d} x, \quad \Gamma(\alpha+1)=\alpha \Gamma(\alpha), \quad \Gamma(1 / 2)=\sqrt{\pi}
   \]
@@ -32,12 +29,12 @@
     \item Let $Z$ have standard normal distribution $\mathcal{N}(0,1)$. What is the
           distribution of $Z^{2}$?
 
-    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with
+    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d.\, random variables aléatoires with
           exponential distribution $\operatorname{Exp}(\theta)$. Determine the
           distribution of the sum $S_{n}=X_{1}+\cdots+X_{n}$. Compute
           $\mathbb{E}\left[S_{n}\right]$ and $\operatorname{Var}\left(S_{n}\right)$.
 
-    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d. random variables aléatoires with
+    \item Let $X_{1}, \ldots, X_{n}$ be $n$ i.i.d.\, random variables aléatoires with
           standard normal distribution $\mathcal{N}(0,1)$. Determine the distribution of
           the sum $S_{n}^{\prime}=X_{1}^{2}+\cdots+X_{n}^{2}$. Compute
           $\mathbb{E}\left[S_{n}^{\prime}\right]$ and
@@ -45,19 +42,48 @@
   \end{enumerate}
 \end{Exercise}
 
+%%% Solution 1 %%%
+
 \begin{solution}
   \begin{enumerate}
     \item We have:
           \begin{align*}
-            \esperance{X^k} & = \frac{\theta^{p}}{\Gamma(p)} \int_0^\infty e^{-\theta t} . t^{p-1} dt                                                                                                     \\
-                            & = \frac{\theta^{p}}{\Gamma(p)} \left[ e^{-\theta t} . \frac{t^p}{p} \right]_0^\infty - \frac{\theta^{p}}{\Gamma(p)} \int_0^\infty  -\theta e^{-\theta t} . \frac{t^p}{p} dt \\
-                            & = \frac{\theta^{p+1}}{p \Gamma(p)} \int_0^\infty e^{-\theta t} . \frac{t^p}{p} dt                                                                                           \\
-                            & = \frac{\theta^{p+1}}{\Gamma(p)} \int_0^\infty e^{-\theta t} . t^p dt                                                                                                       \\
-                            & = \esperance{X^{k+1}}
+            \esperance{X^k} & = \frac{\theta^p}{\Gamma(p)} \int_0^\infty x^k e^{-\theta x} x^{p-1} dx \\
+                            & = \frac{\theta^p}{\Gamma(p)} \frac{\Gamma(k+p)}{\theta^{k+p}}           \\
+                            & = \frac{(k+p-1) \times \cdots \times p}{\theta^k}
           \end{align*}
           Therefore,
+          \[\mathbb{E}[X]=p / \theta \]
+          and
+          \[\operatorname{Var}(X)=p / \theta^{2}\]
+    \item For $a > 0$, we have:
+          \begin{align*}
+            \Phi_{X/a}(t) & = \esperance{e^{itX/a}}                   \\
+                          & = \esperance{e^{i\frac{t}{a}X}}           \\
+                          & = \frac{1}{{(1-i \frac{t}{a\theta})}^{p}}
+          \end{align*}
+          Therefore $X/a \sim \gamma(p, a\theta)$ identifying random variables from characteristic functions.
+    \item We have
+          \begin{align*}
+            \Phi_{X+Y}(t) & = \Phi_{X}(t) \Phi_{Y}(t)                                                             \\
+                          & = \frac{1}{{(1-i \frac{t}{a\theta})}^{p_1}} \frac{1}{{(1-i \frac{t}{a\theta})}^{p_2}} \\
+                          & = \frac{1}{{(1-i \frac{t}{a\theta})}^{p_1 + p_2}}
+          \end{align*}
+          Which concludes.
+    \item The distribution of $Z$ is exactly a Chi-squared distribution $\chi^2_1$ with one degree of liberty:
           \[
-            \forall k \geq 0, ~ \esperance{X^k} = \esperance{X^0} = 1
+            f_{Z^2} (x) = \frac{1}{\sqrt{2 \pi x} e^{-x/2}}
           \]
+    \item For $X$ following an exponential distribution,
+          \[
+            \Phi_X(t) = \frac{1}{1 - it/\theta}
+          \]
+          Therefore,
+          \[
+            \Phi_{S_n}(t) = {\left( \frac{1}{1 - it/\theta} \right)}^n
+          \]
+          And finally $S_n \sim \gamma(n, \theta)$ with same expected value and variance than in 1.
+    \item
+
   \end{enumerate}
 \end{solution}
