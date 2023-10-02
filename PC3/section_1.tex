@@ -70,10 +70,17 @@
                           & = \frac{1}{{(1-i \frac{t}{a\theta})}^{p_1 + p_2}}
           \end{align*}
           Which concludes.
-    \item The distribution of $Z$ is exactly a Chi-squared distribution $\chi^2_1$ with one degree of liberty:
+    \item The distribution of $Z$ is exactly a Gamma distribution $\gamma(1/2, 1/2)$ (or a Chi-squared distribution $\chi^2_1$ with one degree of liberty):
           \[
-            f_{Z^2} (x) = \frac{1}{\sqrt{2 \pi x} e^{-x/2}}
+            f_{Z^2} (x) = \frac{1}{\sqrt{2 \pi x} }e^{-x/2}
           \]
+          Indeed, $\forall t \geq 0$,
+          \begin{align*}
+            \proba{Z^2 \leq x} & = \proba{Z \leq \sqrt{x}}                                                 \\
+                               & = \int_0^{\sqrt{x}} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt           \\
+                               & = \int_0^{x} \frac{1}{\sqrt{2 \pi u} e^{-u/2}} \text{ with } u = \sqrt{t}
+          \end{align*}
+          which concludes.
     \item For $X$ following an exponential distribution,
           \[
             \Phi_X(t) = \frac{1}{1 - it/\theta}
@@ -83,7 +90,8 @@
             \Phi_{S_n}(t) = {\left( \frac{1}{1 - it/\theta} \right)}^n
           \]
           And finally $S_n \sim \gamma(n, \theta)$ with same expected value and variance than in 1.
-    \item
+    \item Using question 3 and 4 for $n$ variables:
+          $$ X_1^2 + \cdots + X_n^2 \sim \gamma(n/2, n/2) $$
 
   \end{enumerate}
 \end{solution}

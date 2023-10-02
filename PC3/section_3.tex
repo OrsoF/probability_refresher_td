@@ -38,8 +38,8 @@
               \theta)}_{\overset{P}{\rightarrow} 0} \overset{d}{\rightarrow} 0\times \mathcal
             N (0,\theta(1-\theta))=0
           \]
-          La convergence en loi vers une constante est
-          \'equivalente \`a la convergence en probabilit\'e, d'o\`u le r\'esultat.
+          La convergence en loi vers une constante est \'equivalente \`a la convergence
+          en probabilit\'e, d'o\`u le r\'esultat.
     \item On \'ecrit
           \begin{align*}
             \sqrt{n} \left( \bar{X}_n (1 - \bar{X}_n) - \theta(1-\theta) \right)
@@ -107,8 +107,8 @@
     \item On rappelle, pour $X\sim\mathcal P(\lambda)$, $\lambda>0$, on a
           $\esperance{}[X]=\var(X)=\lambda$. Alors l'estimateur $\bar X_n$ est alors sans
           biais ($\esperance{}[\bar X_n] =\lambda$), consistant en vertu de la LFGN
-          ($\bar X_n\longrightarrow \esperance{}[X_1]=\lambda~p.s$), et enfin,
-          $\bar{X}_n$ est asymptotiquement normal par le TCL:
+          ($\bar X_n\longrightarrow \esperance{}[X_1]=\lambda~p.s$), et enfin $\bar{X}_n$
+          est asymptotiquement normal par le TCL:
           \[
             \sqrt n( \bar{X}
             _n-\lambda)=\sqrt n( \bar X_n-\esperance{}[X_1])\stackrel{\mathcal
@@ -129,14 +129,14 @@
             \right)\stackrel{\mathcal L}\longrightarrow\mathcal
             N(0,{(g'(\lambda))}^2\var(X))
           \]
-          Nous cherchons donc une fonction $g$ telle que
-          la variance limite vaut 1. Ce qui veut dire
+          Nous cherchons donc une fonction $g$ telle que la variance limite vaut 1. Ce
+          qui veut dire
           \[
             {(g'(\lambda))}^2\var(X)=1
             \Leftrightarrow {(g'(\lambda))}^2 = \frac1\lambda
           \]
-          On peut alors choisir $g(u)
-            = 2\sqrt u$ avec d\'eriv\'ee $g'(u)= 1/\sqrt u$ et on obtient
+          On peut alors choisir $g(u) = 2\sqrt u$ avec d\'eriv\'ee $g'(u)= 1/\sqrt u$ et
+          on obtient
           \[
             \sqrt n
             \left(2\sqrt{\bar X_n}-2\sqrt \lambda \right)\stackrel{\mathcal
@@ -183,10 +183,10 @@
   \begin{enumerate}
     \item
           Comme $Y$ prend ses valeurs dans $\{0,1\}$, $Y$ suit une loi de Bernoulli avec
-          param\`etre $\P(Y=1) = \P(\theta>\xi) = \Phi(\theta)$
+          param\`etre $\proba{Y=1} = \proba{\theta>\xi} = \Phi(\theta)$
 
     \item
-          Puisque $\frac1n\sum_{i=1}^n Y_i\to\esperance{}[Y_1]=\Phi(\theta)~p.s$ et $\Phi^{-1}$ est
+          Puisque $\frac1n\sum_{i=1}^n Y_i\to\esperance{}[Y_1]=\Phi(\theta)$ p.s et $\Phi^{-1}$ est
           une fonction continue, on a $\hat \theta_n=\Phi^{-1}(\frac1n\sum_{i=1}^n Y_i)\to
             \Phi^{-1}(\Phi(\theta))=\theta~p.s$. Donc $\hat\theta_n$ est consistant pour
           $\theta$.
