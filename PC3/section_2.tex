@@ -124,6 +124,7 @@
           \begin{align*}
             \int_{{[-1, 1]}^2} x^2 + y^2 dx dy & = 2 \int_{{[-1, 1]}^2} x^2 ~ dx ~ dy \\
                                                & = 4 \int_{{[-1, 1]}^2} x^2 ~ dx      \\
+                                               & = 8 \int_0^1 x^2 ~ dx                \\
                                                & = \frac{8}{3}
           \end{align*}
           Therefore $a = \frac{3}{8}$.
@@ -136,9 +137,7 @@
                    & = \frac{3x^2 + 1}{4}
           \end{align*}
           And by symmetry $f_Y = f_X$.
-    \item We have
-          $$\esperance{X} = \int_{-1}^1 x \frac{3x^2 + 1}{4} dx = 0 $$
-          and
+    \item We have $$\esperance{X} = \int_{-1}^1 x \frac{3x^2 + 1}{4} dx = 0 $$ and
           \begin{align*}
             \cov{X} & = \esperance{X^2}                           \\
                     & = \int_{-1}^1 x^2  \frac{3x^2 + 1}{4} dx    \\
@@ -184,14 +183,13 @@
 %%% Solution 5 %%%
 
 \begin{solution}
-  No solution yet.
-  % \begin{enumerate}
-  %   \item We have $\var{X_2} = 5$ and $\cov{X_1, X_3} = 3$.
-  %   \item We have:
-  %         \begin{align*}
-  %           \var{X_3 - \alpha_1 X_1 - \alpha_2 X_2} = & \var{X_3} + \alpha_1^2 \var{X_1} + \alpha_2^2 \var{X_2}                                \\
-  %                                                     & - \alpha_1 \cov{X_1, X_3} - \alpha_2 \cov{X_2, X_3} + \alpha_1 \alpha_2 \cov{X_1, X_2} \\
-  %           =                                         & 9 + 2\alpha_1^2 + 5\alpha_2^2 - 3\alpha_1 - 6 \alpha_2 + 2 \alpha_1 \alpha_2
-  %         \end{align*}
-  % \end{enumerate}
+  \begin{enumerate}
+    \item We have $\var{X_2} = 5$ and $\cov{X_1, X_3} = 3$.
+    \item We have:
+          \begin{align*}
+            \var{X_3 - \alpha_1 X_1 - \alpha_2 X_2} = & \var{X_3} + \alpha_1^2 \var{X_1} + \alpha_2^2 \var{X_2}                                \\
+                                                      & - \alpha_1 \cov{X_1, X_3} - \alpha_2 \cov{X_2, X_3} + \alpha_1 \alpha_2 \cov{X_1, X_2} \\
+            =                                         & 9 + 2\alpha_1^2 + 5\alpha_2^2 - 3\alpha_1 - 6 \alpha_2 + 2 \alpha_1 \alpha_2
+          \end{align*}
+  \end{enumerate}
 \end{solution}

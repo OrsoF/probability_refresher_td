@@ -2,6 +2,8 @@
   \section*{Convergence}
 \end{center}
 
+%%% Exercice 6 %%%
+
 \begin{Exercise}
   Let ${\left\{X_{i}\right\}}_{i \geq 0}$ be a sequence of i.i.d. Bernoulli variables with parameter $\theta$.
   \begin{enumerate}
@@ -21,36 +23,59 @@
   \end{enumerate}
 \end{Exercise}
 
+%%% Solution 6 %%%
+
 \begin{solution}
   \begin{enumerate}
-    \item Par le TCL, on a $\sqrt{n} ( \bar{X}_n - \theta)=\sqrt{n} ( \bar{X}_n -
-            \esperance{}[X_1]) \overset{d}{\rightarrow} \mathcal N(0,Var(X_1))=\mathcal N
-            (0,\theta(1-\theta))$.
-    \item Par la LGN, on a $\bar{X}_n \overset{P}{\rightarrow}\esperance{}[X_1]=\theta$.
-          La fonction $h(x)=x(1-x)$ \'etant continue, on obtient par le th\'eor\`eme de
-          continuit\'e, $\bar{X}_n(1-\bar{X}_n)=h(\bar{X}_n)\overset{P}{\rightarrow}
-            h(\theta)=\theta(1-\theta)$.
-    \item On a
+    \item Using Central Limit Theorem, we have:
+          \begin{align*}
+            \sqrt{n} ( \bar{X}_n - \theta) & = \sqrt{n} ( \bar{X}_n -
+            \esperance{X_1})                                                                 \\
+                                           & \overset{d}{\rightarrow} \mathcal N(0,Var(X_1)) \\
+                                           & = \mathcal N(0,\theta(1-\theta))
+          \end{align*}
+    \item Applying Law of Large Numbers, we have $\bar{X}_n \overset{P}{\rightarrow}\esperance{X_1}=\theta$.
+          The function $h(x)=x(1-x)$ being continuous, we obtain
           \[
-            \sqrt{n} ( \bar{X}_n - \theta)^2= \underbrace{\sqrt{n} ( \bar{X}_n -
-              \theta)}_{\overset{d}{\rightarrow} \mathcal N
-              (0,\theta(1-\theta))}\underbrace{( \bar{X}_n -
-              \theta)}_{\overset{P}{\rightarrow} 0} \overset{d}{\rightarrow} 0\times \mathcal
-            N (0,\theta(1-\theta))=0
+            \bar{X}_n (1-\bar{X}_n) = h(\bar{X}_n) \overset{P}{\rightarrow} h(\theta) = \theta(1-\theta)
           \]
-          La convergence en loi vers une constante est \'equivalente \`a la convergence
-          en probabilit\'e, d'o\`u le r\'esultat.
-    \item On \'ecrit
+          applying continuity theorem.
+    \item We have
+          \[
+            \sqrt{n} {( \bar{X}_n - \theta)}^2 = \sqrt{n} ( \bar{X}_n - \theta)( \bar{X}_n - \theta)
+          \]
+          but
+          \[
+            \sqrt{n} ( \bar{X}_n - \theta) \overset{d}{\rightarrow} \mathcal N (0,\theta(1-\theta))
+          \]
+          and $( \bar{X}_n - \theta) \overset{d}{\rightarrow} 0$. Finally
+          \[
+            \sqrt{n} {( \bar{X}_n - \theta)}^2 \overset{d}{\rightarrow} 0
+          \]
+          As convergence in law towards a constant is equivalent to the probability convergence, we can extrapolate the wanted result.
+    \item We write
           \begin{align*}
             \sqrt{n} \left( \bar{X}_n (1 - \bar{X}_n) - \theta(1-\theta) \right)
-             & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)+\theta(1 - \bar{X}_n) - \theta(1-\theta) \right)                                                                            \\
-             & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)-\theta( \bar{X}_n -\theta) \right)                                                                                          \\
-             & = \underbrace{\sqrt{n}   (\bar{X}_n-\theta)}_{\overset{d}{\rightarrow} \mathcal N (0,\theta(1-\theta))} \underbrace{(1 - \bar{X}_n-\theta)}_{\overset{P}{\rightarrow} 1-2\theta} \\
-             & \overset{d}{\rightarrow} (1-2\theta) \mathcal N (0,\theta(1-\theta))= \mathcal N (0,{(1-2\theta)}^2\theta(1-\theta)),
+             & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)+\theta(1 - \bar{X}_n) - \theta(1-\theta) \right) \\
+             & = \sqrt{n} \left( (\bar{X}_n-\theta) (1 - \bar{X}_n)-\theta( \bar{X}_n -\theta) \right)               \\
           \end{align*}
-          par le lemme de Slutsky.
+          but
+          \[
+            \sqrt{n} (\bar{X}_n-\theta) \overset{d}{\rightarrow} \mathcal N (0,\theta(1-\theta))
+          \]
+          and
+          \[
+            (1 - \bar{X}_n-\theta) \overset{P}{\rightarrow} (1-2\theta)
+          \]
+          Therefore,
+          \[
+            \left( \bar{X}_n (1 - \bar{X}_n) - \theta(1-\theta) \right) \overset{d}{\rightarrow} (1-2\theta) N (0,\theta(1-\theta)) = N (0, \theta(1-\theta){(1-2\theta)}^2)
+          \]
+          applying Slutsky theorem.
   \end{enumerate}
 \end{solution}
+
+%%% Exercice 7 %%%
 
 \begin{Exercise}
   Let ${\left(X_{n}\right)}_{n \geq 1}$ be a sequence of i.i.d.\,square-integrable random variables with mean $m$ and variance $\sigma^{2}>0$. Denote $\bar{X}_{n}=\frac{1}{n} \sum_{i=1}^{n} X_{i}$ and $\hat{\sigma}_{n}^{2}=\frac{1}{n} \sum_{i=1}^{n}{\left(X_{i}-\bar{X}_{n}\right)}^{2}$.
@@ -65,22 +90,26 @@
   \end{enumerate}
 \end{Exercise}
 
+%%% Solution 7 %%%
+
 \begin{solution}
-  Commen\c cons par \'etudier le comportement limite de $\hat{\sigma}_n^2$ quand $n\to +\infty$.
+  Let us study the limit case of $\hat{\sigma}_n^2$ when $n\to +\infty$. We have:
   \begin{align*}
     (n-1)\hat{\sigma}_n^2
      & =\sum_{k=1}^n{(X_k-\bar X_n)}^2                                                  \\
      & = \sum_{k=1}^n{(X_k-m)}^2 + 2\sum_{k=1}^n(X_k-m)(m-\bar X_n) + n{(m-\bar X_n)}^2 \\
      & = \sum_{k=1}^n{(X_k-m)}^2 - n{(m-\bar X_n)}^2.
   \end{align*}
-  Donc
+  So
   \begin{align*}
-    \frac{n-1}{n}\hat{\sigma}_n^2 & = \frac{1}{n}\sum_{k=1}^n(X_k-m)^2 - {(m-\bar X_n)}^2                           \\
-                                  & \overset{p.s.}{\longrightarrow}\esperance{}[{(X_1-m)}^2]-0= \mathrm{Var}(X_1)=:
+    \frac{n-1}{n}\hat{\sigma}_n^2 & = \frac{1}{n}\sum_{k=1}^n(X_k-m)^2 - {(m-\bar X_n)}^2                            \\
+                                  & \overset{a.s.}{\longrightarrow}\esperance{{(X_1-m)}^2} - 0 = \mathrm{Var}(X_1)=:
     \sigma^2,
   \end{align*}
-  o\`u la limite est donn\'ee par la loi des grands nombres. Par suite, $\hat{\sigma}_n \to \sigma$ presque s\^urement. Notons $Z_n = \sqrt{n}(\bar X_n-m)$ qui converge en loi, d'apr\`es le th\'eor\`eme limite central vers une variable al\'eatoire gaussienne $Z\sim \mathcal{N}(0,\sigma^2)$. D'apr\`es le lemme de Slutsky, le couple $(Z_n,\hat{\sigma}_n^{-1})$ converge en loi vers $(Z,\sigma^{-1})$. En particulier, la fonction produit \'etant continue, $\frac{Z_n}{\hat{\sigma}_n} \overset{d}{\rightarrow} Z/\sigma \sim \mathcal{N}(0,1)$
+  Here, the limit is given by the Law of Large Numbers. As a result, $\hat{\sigma}_n \to \sigma$ almost surely. Let us note $Z_n := \sqrt{n}(\bar X_n-m)$. Applying Central Limit Theorem, $Z_n$ converges in law to a gaussian random variable $Z\sim \mathcal{N}(0,\sigma^2)$. According to Slutsky theorem, the couple $(Z_n,\hat{\sigma}_n^{-1})$ converges in law to $(Z,\sigma^{-1})$. In particular, the product function being continuous, $\frac{Z_n}{\hat{\sigma}_n} \overset{d}{\rightarrow} Z/\sigma \sim \mathcal{N}(0,1)$
 \end{solution}
+
+%%% Exercice 8 %%%
 
 \begin{Exercise}
   (Poisson model). Let $\left(X_{1}, \ldots, X_{n}\right)$ be an i.i.d. sample from the Poisson distribution with unknown parameter $\lambda>0$. Denote $\bar{X}_{n}=\frac{1}{n} \sum_{i=1}^{n} X_{i}$.
@@ -102,102 +131,85 @@
   \end{enumerate}
 \end{Exercise}
 
+%%% Solution 8 %%%
+
 \begin{solution}
   \begin{enumerate}
-    \item On rappelle, pour $X\sim\mathcal P(\lambda)$, $\lambda>0$, on a
-          $\esperance{}[X]=\var(X)=\lambda$. Alors l'estimateur $\bar X_n$ est alors sans
-          biais ($\esperance{}[\bar X_n] =\lambda$), consistant en vertu de la LFGN
-          ($\bar X_n\longrightarrow \esperance{}[X_1]=\lambda~p.s$), et enfin $\bar{X}_n$
-          est asymptotiquement normal par le TCL:
+    \item We recall that, for $X \sim \mathcal P(\lambda)$ and $\lambda>0$, we have
+          $\esperance{X} = \var{X} = \lambda$.
+
+          Then, the estimator $\bar X_n$ is therefore unbiased ($ \esperance{\bar X_n} = \lambda $) and consistant using the Strong Law of Large Numbers
+          ($ \bar X_n\longrightarrow \esperance{X_1} = \lambda~p.s$). Finally, $\bar{X}_n$
+          is asymptotically normal using the Central Limit Theorem:
           \[
-            \sqrt n( \bar{X}
-            _n-\lambda)=\sqrt n( \bar X_n-\esperance{}[X_1])\stackrel{\mathcal
-              L}\longrightarrow\mathcal N(0,\var(X_1))=\mathcal
-            N(0,\lambda),\quad\text{lorsque }n\to\infty
+            \sqrt{n} ({\bar{X}}_n - \lambda) = \sqrt{n} ( \bar X_n - \esperance{X_1}) \stackrel{\mathcal
+              L}\longrightarrow\mathcal N(0,\var{X_1})=\mathcal
+            N(0,\lambda) \text{ when } n \to \infty
           \]
 
-    \item En utilisant la question a et le lemme de Slutsky, on obtient
+    \item Using the previous question and Slutsky theorem, we get
           \begin{align*}
-            \sqrt n \left(\frac{\bar X_n-\lambda}{\sqrt{\bar X_n}} \right)
-             & = \underbrace{ \sqrt n \left(\frac{\bar X_n-\lambda}{\sqrt{\lambda}} \right) }_{\stackrel{\mathcal L}\longrightarrow\mathcal N(0,1)} \underbrace{\frac{\sqrt{\lambda}}{\sqrt{\bar X_n}}}_{\stackrel{P}\longrightarrow \frac{\sqrt{\lambda}}{\sqrt{\esperance{}[X_1]}}=1}
-            \stackrel{\mathcal L}\longrightarrow\mathcal N(0,1).
+            \sqrt{n} \left(\frac{\bar X_n-\lambda}{\sqrt{\bar X_n}} \right)
+             & = \underbrace{ \sqrt n \left(\frac{\bar X_n-\lambda}{\sqrt{\lambda}} \right) }_{\stackrel{\mathcal L}\longrightarrow\mathcal N(0,1)} \underbrace{\frac{\sqrt{\lambda}}{\sqrt{\bar X_n}}}_{\stackrel{P}\longrightarrow \frac{\sqrt{\lambda}}{\sqrt{\esperance{X_1}}}=1}
+            \stackrel{\mathcal L}\longrightarrow \normal{0}{1}
           \end{align*}
-    \item D'apr\`es la delta m\'ethode, pour toute fonction $g$ continument d\'erivable
-          sur $\R_+$, on a
+    \item Applying Delta method, for any function $g$ continuously differentiable on $\R_+$, we got
           \[
-            \sqrt n \left(g(\bar X_n)-g(\lambda)
-            \right)\stackrel{\mathcal L}\longrightarrow\mathcal
-            N(0,{(g'(\lambda))}^2\var(X))
+            \sqrt{n} \left(g(\bar X_n)-g(\lambda) \right)\stackrel{\mathcal L}\longrightarrow \normal{0}{{g'(\lambda)}^2\var{X}}
           \]
-          Nous cherchons donc une fonction $g$ telle que la variance limite vaut 1. Ce
-          qui veut dire
+          We are looking for a function $g$ with $1$ as a limit variance. This means that
           \[
             {(g'(\lambda))}^2\var(X)=1
             \Leftrightarrow {(g'(\lambda))}^2 = \frac1\lambda
           \]
-          On peut alors choisir $g(u) = 2\sqrt u$ avec d\'eriv\'ee $g'(u)= 1/\sqrt u$ et
-          on obtient
+          We therefore can choose $g(u) = 2\sqrt u$ with, as a derivative, $g'(u)= 1/\sqrt u$ and we get
           \[
             \sqrt n
             \left(2\sqrt{\bar X_n}-2\sqrt \lambda \right)\stackrel{\mathcal
               L}\longrightarrow\mathcal
             N\left(0,{\left(\frac1{\sqrt\lambda}\right)}^2\lambda\right)=\mathcal N(0,1).
           \]
-
   \end{enumerate}
-
 \end{solution}
 
+%%% Exercice 9 %%%
+
 \begin{Exercise}
-  Define the random variable
-
-  \[
-    Y=\mathbb{1}\{\theta>X\}
-  \]
-
-  where $\theta \in \mathbb{R}$ and $X$ is a random variable with standard normal
-  distribution $\mathcal{N}(0,1)$. We observe a sample $Y_{1}, \ldots, Y_{n}$ of
-  i.i.d.\,realizations of $Y$ and suppose that parameter $\theta$ is unknown.
+  Let $X \sim \normal{0}{1}$. Let $ Y := \indicator{X < \theta} $ for $\theta \in \R$. We observe a sample $Y_{1}, \ldots, Y_{n}$ of i.i.d.\,realizations of $Y$ and suppose that parameter $\theta$ is unknown.
   Denote by $\Phi$ the cumulative distribution function of the standard normal
   distribution $\mathcal{N}(0,1)$. An estimator $\hat{\theta}_{n}$ of $\theta$ is
   given by
-
   \[
     \hat{\theta}_{n}=\Phi^{-1}\left(\bar{Y}_{n}\right)
   \]
-
   where $\bar{Y}_{n}=\frac{1}{n} \sum_{i=1}^{n} Y_{i}$
 
   \begin{enumerate}
     \item Determine the distribution of $Y$.
-
     \item Study the convergence in probability of $\hat{\theta}_{n}$ towards $\theta$
           when $n$ tends to infinity.
-
     \item Study the limit distribution of $\sqrt{n}\left(\hat{\theta}_{n}-\theta\right)$.
-
   \end{enumerate}
 \end{Exercise}
+
+%%% Solution 9 %%%
 
 \begin{solution}
   \begin{enumerate}
     \item
-          Comme $Y$ prend ses valeurs dans $\{0,1\}$, $Y$ suit une loi de Bernoulli avec
-          param\`etre $\proba{Y=1} = \proba{\theta>\xi} = \Phi(\theta)$
+          As $Y$ takes its values $\{0,1\}$, $Y$ follows a Bernoulli law with parameter $\proba{Y=1} = \proba{\theta>\xi} = \Phi(\theta)$
 
     \item
-          Puisque $\frac1n\sum_{i=1}^n Y_i\to\esperance{}[Y_1]=\Phi(\theta)$ p.s et $\Phi^{-1}$ est
-          une fonction continue, on a $\hat \theta_n=\Phi^{-1}(\frac1n\sum_{i=1}^n Y_i)\to
-            \Phi^{-1}(\Phi(\theta))=\theta~p.s$. Donc $\hat\theta_n$ est consistant pour
-          $\theta$.
+          As $\frac1n\sum_{i=1}^n Y_i\to\esperance{}[Y_1]=\Phi(\theta)$ a.s and $\Phi^{-1}$ is a continuous function, we have $\hat \theta_n=\Phi^{-1}(\frac1n\sum_{i=1}^n Y_i)\to
+            \Phi^{-1}(\Phi(\theta))=\theta~p.s$. Therefore, $\hat\theta_n$ is consistant for $\theta$.
 
     \item
-          En vertu du TCL (car $\esperance{}[Y^2_1]<\infty$), on a $\sqrt
+          According to CLT, (as $\esperance{Y^2_1}<\infty$), we have $\sqrt
             n(\frac1n\sum_{i=1}^n Y_i-\Phi(\theta))\stackrel{\mathcal
               L}\longrightarrow\mathcal N(0,\var(Y_1))=\mathcal
-            N(0,\Phi(\theta)(1-\Phi(\theta)))$. La fonction $\Phi^{-1}(\theta)$ est
-          continument d\'erivable avec d\'eriv\'ee $(\Phi^{-1})'(\theta) =
-            1/\varphi(\Phi^{-1}(\theta))$. On obtient par la delta-m\'ethode
+            N(0,\Phi(\theta)(1-\Phi(\theta)))$. The function $\Phi^{-1}(\theta)$ is
+          continuously differentiable with derivative $(\Phi^{-1})'(\theta) =
+            1/\varphi(\Phi^{-1}(\theta))$. Applying Delta method, we obtain :
           \begin{align*}
             \sqrt n(\hat\theta_n-\theta) =\sqrt n\left(\Phi^{-1}\left(\frac1n\sum_{i=1}^n Y_i\right)-\Phi^{-1}(\Phi(\theta))\right)
              & \stackrel{\mathcal L}\longrightarrow \mathcal N(0, {((\Phi^{-1})'(\Phi(\theta)))}^2   \Phi(\theta)(1-\Phi(\theta))) \\
@@ -205,5 +217,4 @@
           \end{align*}
 
   \end{enumerate}
-
 \end{solution}
