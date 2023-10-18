@@ -77,11 +77,13 @@
           \]
           Indeed, $\forall t \geq 0$,
           \begin{align*}
-            \proba{Z^2 \leq x} & = \proba{Z \leq \sqrt{x}}                                                 \\
-                               & = \int_0^{\sqrt{x}} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt           \\
-                               & = \int_0^{x} \frac{1}{\sqrt{2 \pi u} e^{-u/2}} \text{ with } u = \sqrt{t}
+            \proba{Z^2 \leq x} & = \proba{ |Z| \leq \sqrt{x}}                                                                                 \\
+                               & = \int_{-\sqrt{x}}^{\sqrt{x}} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt                                    \\
+                               & = \int_{0}^{\sqrt{x}} \frac{\sqrt{2}}{\Gamma(1/2)} e^{-\frac{t^2}{2}} dt                                     \\
+                               & = \frac{\sqrt{2}}{\Gamma(1/2)} \int_0^{x} \frac{1}{\sqrt{u}} e^{-u/2} du \text{ with } u = \sqrt{t}          \\
+                               & = \frac{1}{\Gamma(1/2) {\left( \frac{1}{2} \right)}^{\frac{1}{2}} } \int_0^{x} u^{1-\frac{1}{2}} e^{-u/2} du
           \end{align*}
-          which concludes.
+          which concludes identifying a gamma distribution with parameters $\gamma(\frac{1}{2}, \frac{1}{2})$.
     \item For $X$ following an exponential distribution,
           \[
             \Phi_X(t) = \frac{1}{1 - it/\theta}
@@ -94,7 +96,7 @@
           than in 1.
     \item Using question 3 and 4 for $n$ variables:
           \[
-            X_1^2 + \cdots + X_n^2 \sim \gamma(n/2, n/2)
+            X_1^2 + \cdots + X_n^2 \sim \gamma(n/2, 1/2)
           \]
 
   \end{enumerate}
