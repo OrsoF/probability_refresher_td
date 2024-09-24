@@ -149,9 +149,8 @@
 
 \begin{Exercise} Let $V$ be a random variable with uniform distribution on $[0, \pi / 2]$. Define the random variable $W=\sin (V)$.
   \begin{enumerate}
-    \item Determine the distributions of $W$.
-    \item How does the distribution of $W$ change when $V$ has uniform distribution on
-          $[0, \pi]$?
+    \item Determine the distribution of $W$.
+    \item How does the distribution of $W$ change when $V$ has uniform distribution on $[0, \pi]$?
   \end{enumerate}
 \end{Exercise}
 
@@ -181,7 +180,7 @@
 \begin{solution}
   Soit $f:\mathbb R\longrightarrow \mathbb R$ continue born\'ee. On a
   \begin{align*}
-    \mathbb E[f(\frac1X)] & =\int_\mathbb R f(\frac1x) \frac{1}{\pi(1+x^2)} dx.
+    \mathbb E[f\left(\frac{1}{X}\right)] & =\int_\mathbb R f\left(\frac1x\right) \frac{1}{\pi(1+x^2)} dx.
   \end{align*}
   On a envie de faire le changement $u=1/x$ (mais pas bijectif sur $\mathbb R$) on scinde en deux
 
@@ -315,6 +314,11 @@
                             & = \frac{1}{\sqrt{2\pi}}.2. \int_{\R^+} x e^{\frac{-x^2}{2}}           \\
                             & = \sqrt{\frac{2}{\pi}} {{\left[ e^{\frac{-x^2}{2}} \right]}_0}^\infty \\
                             & = \sqrt{\frac{2}{\pi}}
+          \end{align*}
+          As the distribution of $Y$ is even, the expected value of $Y^{2019}$ should be zero:
+          \begin{align*}
+            \esperance{Y^{2019}} & = \frac{1}{\sqrt{2\pi}} \int_\R x^{2019} e^{\frac{-x^2}{2}} \\
+                                 & = 0
           \end{align*}
   \end{enumerate}
 \end{solution}
