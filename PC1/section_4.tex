@@ -39,7 +39,21 @@
           \end{align*}
     \item We have
           \begin{align*}
-            \esperance{X} = \int_{\mathbb{R}}
+            \esperance{X} & = \frac{1}{\lambda} \int_{\mathbb{R}^+} x.e^{-\lambda.x} dx                                                                                                \\
+                          & = \frac{1}{\lambda} {\left[ x \frac{e^{-\lambda.x}}{-\lambda} \right]}_0^\infty - \frac{1}{\lambda} \int_{\mathbb{R}^+} \frac{e^{-\lambda.x}}{-\lambda} dx \\
+                          & = \frac{1}{\lambda}
+          \end{align*}
+          \begin{align*}
+            \var{X} & = \frac{1}{\lambda} \int_{\mathbb{R}^+} x^2.e^{-\lambda.x} dx - \frac{1}{\lambda^2} \\
+                    & = \frac{2}{\lambda^2} \int_{\mathbb{R}^+} x.e^{-\lambda.x} dx - \frac{1}{\lambda^2} \\
+                    & = \frac{1}{\lambda^2}
+          \end{align*}
+    \item We have
+          \begin{align*}
+            \esperance{X} & = \int_{a}^{b} \frac{x}{b-a} dx                 \\
+                          & = \frac{1}{b-a} \int_{a}^{b} x dx               \\
+                          & = \frac{1}{b-a} (\frac{b^2}{2} - \frac{a^2}{2}) \\
+                          & = \frac{a+b}{2}
           \end{align*}
   \end{enumerate}
 \end{solution}
