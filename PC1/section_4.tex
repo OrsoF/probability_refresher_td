@@ -25,7 +25,23 @@
 \end{Exercise}
 
 \begin{solution}
-  A lot of simple calculus!
+  \begin{enumerate}
+    \item As any binomial random variable can be expressed as the sum of independant Bernoulli random variables, we have
+          \begin{align*}
+            \esperance{X} & = \esperance{\sum_{i=1}^{n} X_i} = \sum_{i=1}^{n} \esperance{X_i} = \sum_{i=1}^{n} p = np
+          \end{align*}
+          and
+          \begin{align*}
+            \var{X} & = \var{\sum_{i=1}^{n} X_i} \\
+                    & = \sum_{i=1}^{n} \var{X_i} \\
+                    & = \sum_{i=1}^{n} p(1-p)    \\
+                    & = np(1-p)
+          \end{align*}
+    \item We have
+          \begin{align*}
+            \esperance{X} = \int_{\mathbb{R}}
+          \end{align*}
+  \end{enumerate}
 \end{solution}
 
 \begin{Exercise}
